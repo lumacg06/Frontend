@@ -1,0 +1,308 @@
+/* Estilo general del cuerpo */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  height: 100%;
+  font-size: 12px; /* Reducido el tamaño de la fuente global */
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+/* Contenedor principal */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px; /* Añadido espacio para no estar pegado al borde */
+  box-sizing: border-box;
+  width: 100%; /* Asegura que el ancho sea 100% */
+  max-width: 1200px; /* Controla el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Encabezados */
+h1,
+h2,
+h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px; /* Reducido el tamaño de los encabezados */
+}
+
+/* Párrafos */
+p {
+  font-size: 1.5rem; /* Ajustado el tamaño de los párrafos */
+  color: #a39595;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de contenido */
+.container {
+  width: 100%;
+  max-width: 60%; /* Ajuste al ancho del contenedor */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Tabla */
+table {
+  width: 100%; /* Mantiene el ancho de la tabla */
+  border-collapse: collapse;
+  margin: 0 0 30px 0;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 10px; /* Reducido el padding */
+  border: 1px solid #525252;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 18px; /* Reducido el tamaño de las celdas */
+}
+
+/* Encabezado de la tabla */
+thead {
+  background-color: #eaeaea;
+}
+
+thead th {
+  padding: 10px;
+  background-color: #f2f2f2;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px; /* Reducido el tamaño de los encabezados */
+}
+
+/* Anchos de las columnas */
+th.etnia-header {
+  width: 25%;
+}
+
+th.actions-header {
+  width: 25%;
+  text-align: center;
+  background-color: #000000;
+}
+
+/* Establecer un ancho fijo a las celdas para mantener el tamaño */
+td {
+  min-width: 100px;
+  font-size: 20px; /* Ajuste al tamaño de la fuente en las celdas */
+}
+
+/* Filas alternas */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Resaltar filas al pasar el cursor */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Botones dentro de las celdas de "Acciones" */
+tbody td button {
+  padding: 8px 16px; /* Reducido el tamaño del botón */
+  margin: 0 5px;
+  background-color: #000000d6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px; /* Reducido el tamaño de la fuente en los botones */
+}
+
+tbody td button:hover {
+  background-color: #1008f0d7;
+}
+
+/* Estilos para el div.pantalla en pantalla completa */
+.pantalla {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 80px;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0);
+  border-radius: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Estilo del formulario de etnia */
+.etnia-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 80%;
+  position: relative;
+  padding: 15px; /* Reducido el padding */
+  visibility: visible;
+}
+
+/* Ocultar el formulario si no está en modo edición */
+.etnia-form.hidden {
+  display: none;
+}
+
+/* Etiqueta "Nueva Etnia" */
+.etnia-form-label {
+  font-size: 18px; /* Reducido el tamaño de la etiqueta */
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Campo de entrada para la etnia */
+.etnia-form-input {
+  padding: 10px;
+  font-size: 16px; /* Reducido el tamaño de la entrada */
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Botón de envío */
+.etnia-form-button {
+  padding: 10px 20px;
+  background-color: #000000d6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  width: auto;
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: 50%;
+  max-width: 500px;
+}
+
+.etnias-table-header {
+  padding: 10px;
+  background-color: #eaeaea;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Estilo del formulario de discapacidad */
+.discapacidad-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 80%;
+  position: relative;
+  padding: 15px; /* Reducido el padding */
+  visibility: visible;
+}
+
+/* Ocultar el formulario si no está en modo edición */
+.discapacidad-form.hidden {
+  display: none;
+}
+
+/* Etiqueta "Nueva Discapacidad" */
+.discapacidad-form-label {
+  font-size: 18px; /* Reducido el tamaño de la etiqueta */
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Campo de entrada para la discapacidad */
+.discapacidad-form-input {
+  padding: 10px;
+  font-size: 16px; /* Reducido el tamaño de la entrada */
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Botón de envío */
+.discapacidad-form-button {
+  padding: 10px 20px;
+  background-color: #000000d6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  width: auto;
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+/* Modal overlay */
+.discapacidad-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.discapacidad-modal-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: 50%;
+  max-width: 500px;
+}
+
+/* Encabezado de la tabla de discapacidades */
+.discapacidades-table-header {
+  padding: 10px;
+  background-color: #eaeaea;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}

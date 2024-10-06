@@ -1,0 +1,27 @@
+/* Global Styles */
+body, html {
+  color: #000000; /* Texto en negro */
+  font-family: Arial, sans-serif; /* Fuente general */
+  background-color: #5199e1; /* Color de fondo claro */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el Navbar */
+.navbar {
+  background-color: #343a40; /* Mantiene el fondo oscuro del Navbar */
+}
+
+.navbar-brand, .nav-link {
+  color: #ffffff !important; /* Texto del Navbar en blanco */
+}
+
+.nav-link:hover {
+  color: #adb5bd !important; /* Texto al pasar el ratón por encima en gris claro */
+}
+
+/* Estilos para el Main */
+main {
+  padding: 20px;
+}
+
