@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './EtniaApp.css';
-import EtniasTable from './EtniaTable';
-import EtniaForm from './EtniaForm';
-import EditModal from './EtniaModal'; // Importar el componente de ventana emergente
-import Swal from 'sweetalert2';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./EtniaApp.css";
+import EtniasTable from "./EtniaTable";
+import EtniaForm from "./EtniaForm";
+import EditModal from "./EtniaModal"; // Importar el componente de ventana emergente
+import Swal from "sweetalert2";
 
 const EtniaApp = () => {
   const [etnias, setEtnias] = useState([]);
@@ -16,10 +16,10 @@ const EtniaApp = () => {
 
   const fetchEtnias = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/etnias');
+      const response = await axios.get("http://localho st:8080/api/etnias");
       setEtnias(response.data);
     } catch (error) {
-      console.error('Error fetching etnias:', error);
+      console.error("Error fetching etnias:", error);
     }
   };
 
@@ -29,12 +29,12 @@ const EtniaApp = () => {
 
   const handleDelete = (id) => {
     Swal.fire({
-      title: '¿Estás seguro de eliminar esta etnia?',
-      text: 'No podrás revertir esta acción.',
-      icon: 'warning',
+      title: "¿Estás seguro de eliminar esta etnia?",
+      text: "No podrás revertir esta acción.",
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'No, cancelar',
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "No, cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         axios
@@ -42,10 +42,10 @@ const EtniaApp = () => {
           .then(() => {
             setEtnias(etnias.filter((etnia) => etnia.id !== id)); // Eliminamos la etnia de la lista
             Swal.fire({
-              title: 'Etnia eliminada con éxito!',
-              text: 'La etnia ha sido eliminada correctamente.',
-              icon: 'success',
-              confirmButtonText: 'Aceptar',
+              title: "Etnia eliminada con éxito!",
+              text: "La etnia ha sido eliminada correctamente.",
+              icon: "success",
+              confirmButtonText: "Aceptar",
             });
           })
           .catch((error) => {
@@ -66,10 +66,10 @@ const EtniaApp = () => {
           );
           setEditing(null); // Limpiar edición después de guardar
           Swal.fire({
-            title: 'Etnia actualizada con éxito!',
-            text: 'La etnia ha sido actualizada correctamente.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar',
+            title: "Etnia actualizada con éxito!",
+            text: "La etnia ha sido actualizada correctamente.",
+            icon: "success",
+            confirmButtonText: "Aceptar",
           });
         })
         .catch((error) => {
@@ -78,14 +78,14 @@ const EtniaApp = () => {
     } else {
       // Añade una nueva etnia
       axios
-        .post('http://localhost:8080/api/etnias', newEtnia)
+        .post("http://localhost:8080/api/etnias", newEtnia)
         .then((response) => {
           setEtnias([...etnias, response.data]);
           Swal.fire({
-            title: 'Etnia creada con éxito!',
-            text: 'La etnia ha sido creada correctamente.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar',
+            title: "Etnia creada con éxito!",
+            text: "La etnia ha sido creada correctamente.",
+            icon: "success",
+            confirmButtonText: "Aceptar",
           });
         })
         .catch((error) => {
