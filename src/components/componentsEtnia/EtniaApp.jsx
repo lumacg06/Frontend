@@ -16,7 +16,7 @@ const EtniaApp = () => {
 
   const fetchEtnias = async () => {
     try {
-      const response = await axios.get("http://localho st:8080/api/etnias");
+      const response = await axios.get("http://localhost:8080/api/etnias");
       setEtnias(response.data);
     } catch (error) {
       console.error("Error fetching etnias:", error);
