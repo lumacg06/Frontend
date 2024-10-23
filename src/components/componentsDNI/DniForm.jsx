@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const DniForm = ({ dni, onSave = () => {} }) => {
   if (!dni) return null; // Evitar renderizar el formulario vacío
@@ -35,18 +35,20 @@ const DniForm = ({ dni, onSave = () => {} }) => {
 
   return (
     <form className="dni-form" onSubmit={handleSubmit}>
-      <label className="dni-form-label">
+      <label className="dni-form-label" htmlFor="tipo-documento">
         Tipo de Documento:
         <input
+          id="tipo-documento" // ID único para el campo de tipo de documento
           className="dni-form-input"
           type="text"
           value={tipoDocumento}
           onChange={(event) => setTipoDocumento(event.target.value)}
         />
       </label>
-      <label className="dni-form-label">
+      <label className="dni-form-label" htmlFor="codigo">
         Código:
         <input
+          id="codigo" // ID único para el campo de código
           className="dni-form-input"
           type="text"
           value={codigo}

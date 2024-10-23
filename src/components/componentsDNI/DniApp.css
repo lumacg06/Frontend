@@ -1,215 +1,172 @@
-/* Estilo general del cuerpo */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #d41d1d;
-    color: #333;
-    height: 100%;
-    font-size: 12px;
-    overflow-x: hidden;
-}
-
-/* Contenedor principal */
-.app-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Encabezados */
-h1, h2, h3 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-/* Párrafos */
-p {
-    font-size: 1.5rem;
-    color: #a39595;
-    margin-bottom: 20px;
-}
-
 /* Contenedor de contenido */
 .container {
     width: 100%;
-    max-width: 60%;
-    background-color: #f0f0f0;
+    max-width: 80%;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: stretch;
 }
 
 /* Tabla */
-table {
+.dni-table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 0 0 30px 0;
-    table-layout: fixed;
+    border-collapse: collapse; /* Cambiado a collapse para unir bordes */
+    border: 1px solid #e0e0e0;
+    margin: 0;
 }
 
-th, td {
-    padding: 10px;
-    border: 1px solid #525252;
+/* Estilos para celdas */
+.dni-table th,
+.dni-table td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0; /* Añadido borde a todas las celdas */
     text-align: left;
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 /* Encabezado de la tabla */
-thead {
-    background-color: #eaeaea;
+.dni-table thead {
+    background-color: #f8f8f8;
 }
 
-thead th {
-    padding: 10px;
-    background-color: #f2f2f2;
-    text-align: center;
+.dni-table thead th {
+    padding: 15px;
     font-weight: bold;
-    font-size: 20px;
-}
-
-/* Anchos de las columnas */
-th.dni-header {
-    width: 25%;
-}
-
-th.actions-header {
-    width: 25%;
-    text-align: center;
-    background-color: #000000;
-}
-
-/* Establecer un ancho fijo a las celdas para mantener el tamaño */
-td {
-    min-width: 100px;
-    font-size: 20px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 /* Filas alternas */
-tbody tr:nth-child(even) {
+.dni-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
 /* Resaltar filas al pasar el cursor */
-tbody tr:hover {
-    background-color: #f1f1f1;
+.dni-table tbody tr:hover {
+    background-color: #f5f5f5;
 }
 
 /* Botones dentro de las celdas de "Acciones" */
-tbody td button {
-    padding: 8px 16px;
-    margin: 0 5px;
-    background-color: #000000d6;
+.dni-table tbody td button {
+    padding: 6px 12px;
+    margin: 0 3px;
+    background-color: #232324;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
+    transition: background-color 0.2s;
 }
 
-tbody td button:hover {
-    background-color: #1008f0d7;
+.dni-table tbody td button:hover {
+    background-color: #66778a;
 }
 
 /* Botón para agregar DNI */
 .add-dni-button {
+    align-self: flex-start;
     padding: 10px 20px;
-    background-color: #000000d6;
+    background-color: #323232;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
+    transition: background-color 0.2s;
 }
 
 .add-dni-button:hover {
-    background-color: #1008f0d7;
+    background-color: #218838;
 }
 
-/* Estilos para el modal */
+/* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .dni-table th,
+    .dni-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .add-dni-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.modal-content {
-    background-color: #f9f9f9;
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    width: 50%;
-    max-width: 500px;
-}
-
-/* Estilos para el formulario dentro del modal */
-.dni-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.dni-form-label {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-.dni-form-input {
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-.dni-form-button {
-    padding: 10px 20px;
-    background-color: #000000d6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    width: auto;
-    max-width: 200px;
-    margin-top: 10px;
-}
-
-.dni-form-button:hover {
-    background-color: #1008f0d7;
-}
-
-/* Estilos para el encabezado de la tabla de DNI */
-.dni-table-header {
-    padding: 10px;
-    background-color: #eaeaea;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Ancho del modal */
+    max-width: 90%; /* Ancho máximo para pantallas pequeñas */
+  }
+  
+  .dni-table-header {
+    margin-bottom: 20px;
+    font-size: 1.5em;
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-}
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; /* Negrita para las etiquetas */
+  }
+  
+  input[type="text"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px; /* Espaciado superior */
+  }
+  
+  button {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px; /* Espaciado entre botones */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+  }
+  
+  button[type="button"] {
+    background-color: #dc3545; /* Color de fondo para el botón de cancelar */
+  }
+  
+  button[type="button"]:hover {
+    background-color: #c82333; /* Color de fondo al pasar el mouse para el botón de cancelar */
+  }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './DniModal.css';
 
 const DniModal = ({ dni, onClose, onSave }) => {
   const [tipoDocumento, setTipoDocumento] = React.useState(dni.tipoDocumento);
@@ -18,17 +19,19 @@ const DniModal = ({ dni, onClose, onSave }) => {
       <div className="modal-content">
         <h2 className="dni-table-header">Editar Tipo Documento</h2>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label htmlFor="tipo-documento-modal">
             Tipo Documento:
             <input
+              id="tipo-documento-modal" // ID único para el campo de tipo de documento en el modal
               type="text"
               value={tipoDocumento}
               onChange={(event) => setTipoDocumento(event.target.value)}
             />
           </label>
-          <label>
+          <label htmlFor="codigo-modal">
             Código:
             <input
+              id="codigo-modal" // ID único para el campo de código en el modal
               type="text"
               value={codigo}
               onChange={(event) => setCodigo(event.target.value)}

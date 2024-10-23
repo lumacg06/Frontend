@@ -1,0 +1,63 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Ancho del modal */
+    max-width: 90%; /* Ancho máximo para pantallas pequeñas */
+  }
+  
+  .dni-table-header {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; /* Negrita para las etiquetas */
+  }
+  
+  input[type="text"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px; /* Espaciado superior */
+  }
+  
+  button {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px; /* Espaciado entre botones */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+  }
+  
+  button[type="button"] {
+    background-color: #dc3545; /* Color de fondo para el botón de cancelar */
+  }
+  
+  button[type="button"]:hover {
+    background-color: #c82333; /* Color de fondo al pasar el mouse para el botón de cancelar */
+  }

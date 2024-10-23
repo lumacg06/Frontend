@@ -5,15 +5,15 @@ const DniTable = ({ dnis, onEdit, onDelete }) => {
   return (
     <div className="container">
       {/* Tabla de DNIs */}
-      <table className="dni-table">
+      <table id="dni-table" className="dni-table"> {/* ID único para la tabla */}
         <thead>
           <tr>
-            <th className="dni-table-header">Tipo Documento</th>
-            <th className="dni-table-header">Codigo</th>
-            <th className="dni-table-header">Acciones</th>
+            <th id="tipo-documento-header" className="dni-table-header">Tipo Documento</th> {/* ID único para la cabecera de tipo de documento */}
+            <th id="codigo-header" className="dni-table-header">Codigo</th> {/* ID único para la cabecera de código */}
+            <th id="acciones-header" className="dni-table-header">Acciones</th> {/* ID único para la cabecera de acciones */}
           </tr>
         </thead>
-        <tbody>
+        <tbody id="dni-table-body"> {/* ID único para el cuerpo de la tabla */}
           {dnis.map((dni) => (
             <DniRow
               key={dni.id}

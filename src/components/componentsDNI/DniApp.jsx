@@ -111,7 +111,7 @@ const DniApp = () => {
       <h1>Tipos de Documento</h1>
 
       <button onClick={handleOpenModal} className="add-dni-button">
-        Agregar DNI
+        Agregar Tipo Documento
       </button>
 
       <DniTable dnis={dnis} onEdit={handleEdit} onDelete={handleDelete} />
