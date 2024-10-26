@@ -1,29 +1,28 @@
-import React from 'react';
-import DniRow from './DniRow';
+import React from "react";
+import DniRow from "./DniRow";
 
-const DniTable = ({ dnis, onEdit, onDelete }) => {
+const DniTable = ({ dnis, onDelete, onEdit }) => {
   return (
-    <div className="container">
-      {/* Tabla de DNIs */}
-      <table id="dni-table" className="dni-table"> {/* ID único para la tabla */}
-        <thead>
-          <tr>
-            <th id="tipo-documento-header" className="dni-table-header">Tipo Documento</th> {/* ID único para la cabecera de tipo de documento */}
-            <th id="codigo-header" className="dni-table-header">Codigo</th> {/* ID único para la cabecera de código */}
-            <th id="acciones-header" className="dni-table-header">Acciones</th> {/* ID único para la cabecera de acciones */}
-          </tr>
-        </thead>
-        <tbody id="dni-table-body"> {/* ID único para el cuerpo de la tabla */}
-          {dnis.map((dni) => (
-            <DniRow
-              key={dni.id}
-              dni={dni}
-              onEdit={onEdit}
-              onDelete={onDelete}
-            />
-          ))}
-        </tbody>
-      </table>
+    <div className="dni-container"> 
+    <table className="dni-table">
+      <thead className="dni-table-thead">
+        <tr className="dni-table-row">
+          <th className="dni-header-nombre">Tipo de documento</th>
+          <th className="dni-header-codigo">Código</th>
+          <th className="dni-header-acciones">Acciones</th>
+        </tr>
+      </thead>
+      <tbody className="dni-table-body">
+        {dnis.map((dni) => (
+          <DniRow 
+            key={dni.id}
+            dni={dni} 
+            onDelete={onDelete} 
+            onEdit={onEdit} 
+          />
+        ))}
+      </tbody>
+    </table>
     </div>
   );
 };

@@ -1,0 +1,25 @@
+/* Estilo general del cuerpo */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ceb9b9;
+    color: #333;
+    height: 100%;
+    font-size: 12px; /* Reducido el tamaño de la fuente global */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+/* Contenedor principal */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px; /* Añadido espacio para no estar pegado al borde */
+    box-sizing: border-box;
+    width: 100%; /* Asegura que el ancho sea 100% */
+    max-width: 1200px; /* Controla el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}

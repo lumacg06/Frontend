@@ -25,6 +25,7 @@ const App = () => {
               IPS Salud y Vida
             </Navbar.Brand>
             <Navbar.Toggle
+              id="menu-toggle-button" // Cambiado
               aria-controls="offcanvas-navbar"
               onClick={handleShow}
             />

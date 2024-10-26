@@ -1,13 +1,23 @@
-import React from 'react';
+import React from "react";
 
-const EditDiscapacidadModal = ({ discapacidad, onClose, onSave }) => {
+const DiscapacidadModal = ({ discapacidad, onClose, onSave }) => {
   const [discapacidadValue, setDiscapacidadValue] = React.useState(
-    discapacidad.discapacidad
+    discapacidad?.categoria || '' // Cambiado de discapacidad.discapacidad a discapacidad?.categoria
   );
+
+  // Actualizar el valor cuando cambia la prop discapacidad
+  React.useEffect(() => {
+    if (discapacidad) {
+      setDiscapacidadValue(discapacidad.categoria || '');
+    }
+  }, [discapacidad]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newDiscapacidad = { discapacidad: discapacidadValue };
+    const newDiscapacidad = { 
+      categoria: discapacidadValue,  // Cambiado de discapacidad a categoria
+      ...(discapacidad?.id && { id: discapacidad.id })
+    };
     onSave(newDiscapacidad);
   };
 
@@ -15,17 +25,30 @@ const EditDiscapacidadModal = ({ discapacidad, onClose, onSave }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <h2 className="discapacidades-table-header">Editar discapacidad</h2>
-        <form onSubmit={handleSubmit}>
-          <label>
+        <form className="edit-form-discapacides" onSubmit={handleSubmit}>
+          <label className="edit-modal-discapacides">
             Discapacidad:
             <input
+              className="edit-modal-input-discapacidades"
               type="text"
               value={discapacidadValue}
               onChange={(event) => setDiscapacidadValue(event.target.value)}
+              required
+              maxLength={255}
             />
           </label>
-          <button type="submit">Guardar</button>
-          <button type="button" onClick={onClose}>
+          <button 
+            className="edit-modal-guardar-button" 
+            type="submit"
+            disabled={!discapacidadValue.trim()}
+          >
+            Guardar
+          </button>
+          <button
+            className="edit-modal-cancelar-button"
+            type="button"
+            onClick={onClose}
+          >
             Cancelar
           </button>
         </form>
@@ -34,4 +57,4 @@ const EditDiscapacidadModal = ({ discapacidad, onClose, onSave }) => {
   );
 };
 
-export default EditDiscapacidadModal;
+export default DiscapacidadModal;

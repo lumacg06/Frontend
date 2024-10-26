@@ -1,5 +1,5 @@
-import React from 'react';
-import './DniModal.css';
+import React from "react";
+import "./DniModal.css";
 
 const DniModal = ({ dni, onClose, onSave }) => {
   const [tipoDocumento, setTipoDocumento] = React.useState(dni.tipoDocumento);
@@ -7,40 +7,63 @@ const DniModal = ({ dni, onClose, onSave }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newDni = { 
+    const newDni = {
       tipoDocumento: tipoDocumento,
-      codigo: codigo
+      codigo: codigo,
     };
     onSave(newDni);
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <h2 className="dni-table-header">Editar Tipo Documento</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="tipo-documento-modal">
-            Tipo Documento:
-            <input
-              id="tipo-documento-modal" // ID único para el campo de tipo de documento en el modal
-              type="text"
-              value={tipoDocumento}
-              onChange={(event) => setTipoDocumento(event.target.value)}
-            />
-          </label>
-          <label htmlFor="codigo-modal">
-            Código:
-            <input
-              id="codigo-modal" // ID único para el campo de código en el modal
-              type="text"
-              value={codigo}
-              onChange={(event) => setCodigo(event.target.value)}
-            />
-          </label>
-          <button type="submit">Guardar</button>
-          <button type="button" onClick={onClose}>
-            Cancelar
-          </button>
+    <div className="dnimodal-overlay">
+      <div className="dnimodal-content">
+        <h2 className="dnimodal-title">Editar Tipo Documento</h2>
+        <form className="dnimodal-form" onSubmit={handleSubmit}>
+          <table className="dnimodal-table">
+            <tbody>
+              <tr className="dnimodal-row">
+                <td className="dnimodal-cell">
+                  <label className="dnimodal-label">
+                    Tipo Documento:
+                    <input
+                      className="dnimodal-input"
+                      type="text"
+                      value={tipoDocumento}
+                      onChange={(event) => setTipoDocumento(event.target.value)}
+                    />
+                  </label>
+                </td>
+                <td className="dnimodal-cell">
+                  <label className="dnimodal-label">
+                    Código:
+                    <input
+                      className="dnimodal-input"
+                      type="text"
+                      value={codigo}
+                      onChange={(event) => setCodigo(event.target.value)}
+                    />
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td className="dnimodal-footer">
+                  <button
+                    className="dnimodal-button-save"
+                    type="submit"
+                  >
+                    Guardar
+                  </button>
+                  <button
+                    className="dnimodal-button-cancel"
+                    type="button"
+                    onClick={onClose}
+                  >
+                    Cancelar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </form>
       </div>
     </div>

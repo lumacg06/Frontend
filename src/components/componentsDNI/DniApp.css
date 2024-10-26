@@ -1,172 +1,237 @@
-/* Contenedor de contenido */
-.container {
-    width: 100%;
-    max-width: 80%;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
+/* Contenedor principal */
+.dni-container {
+  width: 100%;
+  margin: 3rem auto;
+  overflow-x: auto;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
-/* Tabla */
+/* Estilos de la tabla */
 .dni-table {
-    width: 100%;
-    border-collapse: collapse; /* Cambiado a collapse para unir bordes */
-    border: 1px solid #e0e0e0;
-    margin: 0;
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  border: 3px solid #000000;
 }
 
-/* Estilos para celdas */
-.dni-table th,
-.dni-table td {
-    padding: 12px 15px;
-    border: 1px solid #e0e0e0; /* Añadido borde a todas las celdas */
-    text-align: left;
-    line-height: 1.5;
-    font-size: 14px;
+.dni-table-thead {
+  background-color: #000000;
+  color: white;
 }
 
-/* Encabezado de la tabla */
-.dni-table thead {
-    background-color: #f8f8f8;
+.dni-table-row {
+  border: 2px solid #000000;
+  transition: background-color 0.3s ease;
 }
 
-.dni-table thead th {
-    padding: 15px;
-    font-weight: bold;
-    font-size: 16px;
-    color: #333;
-    border-bottom: 2px solid #e0e0e0;
+.dni-table-row:hover {
+  background-color: #f8f9fa;
 }
 
-/* Filas alternas */
-.dni-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+.dni-header-nombre,
+.dni-header-codigo,
+.dni-header-acciones {
+  padding: 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: 2px solid #000000;
+  background-color: #000000;
 }
 
-/* Resaltar filas al pasar el cursor */
-.dni-table tbody tr:hover {
-    background-color: #f5f5f5;
+.dni-header-nombre {
+  width: 40%;
 }
 
-/* Botones dentro de las celdas de "Acciones" */
-.dni-table tbody td button {
-    padding: 6px 12px;
-    margin: 0 3px;
-    background-color: #232324;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s;
+.dni-header-codigo {
+  width: 30%;
 }
 
-.dni-table tbody td button:hover {
-    background-color: #66778a;
+.dni-header-acciones {
+  width: 30%;
+  text-align: center;
 }
 
-/* Botón para agregar DNI */
-.add-dni-button {
-    align-self: flex-start;
-    padding: 10px 20px;
-    background-color: #323232;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 20px;
-    transition: background-color 0.2s;
+.dni-table-body tr {
+  border: 2px solid #000000;
 }
 
-.add-dni-button:hover {
-    background-color: #218838;
+.dni-table-body td {
+  padding: 1.3rem;
+  color: #000000;
+  font-size: 1.1rem;
+  border: 2px solid #000000;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    .container {
-        max-width: 95%;
-        padding: 10px;
-    }
 
-    .dni-table th,
-    .dni-table td {
-        font-size: 12px;
-        padding: 8px;
-    }
 
-    .add-dni-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
+
+.dni-input-field:focus {
+  border-color: #000000;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  outline: none;
 }
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+
+/* Botón de envío (si lo necesitas) */
+.dni-submit-button {
+  background-color: #000000;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dni-submit-button:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+/* Modal de edición (si lo necesitas) */
+.dni-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 600px;
+  max-width: 95vw;
+  border: 2px solid #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos existentes */
+.dniform-container {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ... (resto de tus estilos existentes) ... */
+
+/* Estilos para la ventana modal */
+.dni-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dni-modal-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Animación para la aparición del modal */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .modal-content {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px; /* Ancho del modal */
-    max-width: 90%; /* Ancho máximo para pantallas pequeñas */
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .dni-table-header {
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    text-align: center;
+}
+
+/* Opcional: Botón para cerrar el modal */
+.dni-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  padding: 5px;
+}
+
+.dni-modal-close:hover {
+  color: #333;
+}
+
+/* Estilos para hacer el modal responsive */
+@media (max-width: 600px) {
+  .dni-modal-container {
+    width: 95%;
+    margin: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold; /* Negrita para las etiquetas */
-  }
-  
-  input[type="text"] {
-    width: 100%; /* Ancho completo */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 5px; /* Espaciado superior */
-  }
-  
-  button {
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-right: 10px; /* Espaciado entre botones */
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el mouse */
-  }
-  
-  button[type="button"] {
-    background-color: #dc3545; /* Color de fondo para el botón de cancelar */
-  }
-  
-  button[type="button"]:hover {
-    background-color: #c82333; /* Color de fondo al pasar el mouse para el botón de cancelar */
-  }
+}
+
+/* Prevenir scroll en el body cuando el modal está abierto */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Título del modal */
+.dni-modal-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Contenido del modal */
+.dni-modal-content {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los botones dentro del modal */
+.dni-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Efecto de hover para los botones */
+.dniform-button-save:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.dniform-button-cancel:hover {
+  background-color: #da190b;
+}
+
+/* Transición suave para los botones */
+.dniform-button-save,
+.dniform-button-cancel {
+  transition: background-color 0.3s ease;
+}

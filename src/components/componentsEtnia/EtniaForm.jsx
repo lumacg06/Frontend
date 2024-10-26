@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const EtniaForm = ({ etnia, onSave = () => {} }) => {
-  if (!etnia) return null; // Agregar esta línea para evitar renderizar el formulario vacío
+  if (!etnia) return null; // Evitar renderizar el formulario vacío
 
   const [etniaValue, setEtniaValue] = useState(etnia.etnia);
 
@@ -29,17 +29,17 @@ const EtniaForm = ({ etnia, onSave = () => {} }) => {
   };
 
   return (
-    <form className="etnia-form" onSubmit={handleSubmit}>
+    <form className="etnia-form-container" onSubmit={handleSubmit}>
       <label className="etnia-form-label">
-        Nueva Etnia:
+        Nueva etnia:
         <input
-          className="etnia-form-input"
+          className="etnia-input-field"
           type="text"
           value={etniaValue}
           onChange={(event) => setEtniaValue(event.target.value)}
         />
       </label>
-      <button className="etnia-form-button" type="submit">
+      <button className="etnia-submit-button" type="submit">
         Guardar
       </button>
     </form>

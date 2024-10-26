@@ -1,63 +1,112 @@
-.modal-overlay {
+/* Estilos del overlay del modal */
+.dnimodal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+    z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
   }
   
-  .modal-content {
+  /* Estilos del contenido del modal */
+  .dnimodal-content {
     background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px; /* Ancho del modal */
-    max-width: 90%; /* Ancho máximo para pantallas pequeñas */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra alrededor del modal */
+    width: 90%;
+    max-width: 500px; /* Ancho máximo */
   }
   
-  .dni-table-header {
-    margin-bottom: 20px;
-    font-size: 1.5em;
+  /* Título del modal */
+  .dnimodal-title {
     text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 24px; /* Tamaño del título */
+    color: #333; /* Color del texto */
   }
   
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold; /* Negrita para las etiquetas */
+  /* Estilos del formulario */
+  .dnimodal-form {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
   }
   
-  input[type="text"] {
-    width: 100%; /* Ancho completo */
+  /* Estilos de la tabla dentro del modal */
+  .dnimodal-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina espacios entre celdas */
+  }
+  
+  /* Filas de la tabla */
+  .dnimodal-row {
+    margin-bottom: 1rem; /* Espacio entre filas */
+  }
+  
+  /* Celdas de la tabla */
+  .dnimodal-cell {
+    padding: 1rem; /* Espaciado interno */
+  }
+  
+  /* Etiquetas dentro del modal */
+  .dnimodal-label {
+    display: block; /* Asegura que la etiqueta ocupe su propia línea */
+    margin-bottom: 0.5rem; /* Espacio debajo de la etiqueta */
+    font-size: 16px; /* Tamaño de la etiqueta */
+    color: #555; /* Color del texto */
+  }
+  
+  /* Estilos de los inputs */
+  .dnimodal-input {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 5px; /* Espaciado superior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: border-color 0.3s; /* Transición suave para el borde */
   }
   
-  button {
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color del texto */
+  .dnimodal-input:focus {
+    border-color: #007bff; /* Color del borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+  }
+  
+  /* Estilos del pie de página del modal */
+  .dnimodal-footer {
+    text-align: right; /* Alineación a la derecha */
+    margin-top: 1rem; /* Espacio encima del pie */
+  }
+  
+  /* Botones dentro del modal */
+  .dnimodal-button-save,
+  .dnimodal-button-cancel {
+    padding: 10px 20px; /* Espaciado interno */
     border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-right: 10px; /* Espaciado entre botones */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    margin-left: 10px; /* Espacio entre botones */
   }
   
-  button:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+  .dnimodal-button-save {
+    background-color: #28a745; /* Color de fondo verde */
+    color: white; /* Color del texto */
   }
   
-  button[type="button"] {
-    background-color: #dc3545; /* Color de fondo para el botón de cancelar */
+  .dnimodal-button-save:hover {
+    background-color: #218838; /* Color de fondo más oscuro al pasar el ratón */
   }
   
-  button[type="button"]:hover {
-    background-color: #c82333; /* Color de fondo al pasar el mouse para el botón de cancelar */
+  .dnimodal-button-cancel {
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: white; /* Color del texto */
+  }
+  
+  .dnimodal-button-cancel:hover {
+    background-color: #c82333; /* Color de fondo más oscuro al pasar el ratón */
   }

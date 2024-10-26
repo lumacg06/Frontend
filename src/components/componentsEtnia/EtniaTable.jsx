@@ -3,16 +3,16 @@ import EtniaRow from './EtniaRow';
 
 const EtniasTable = ({ etnias, onEdit, onDelete }) => {
   return (
-    <div className="container">
+    <div className="etnias-container">
       {/* Tabla de Etnias */}
       <table className="etnias-table">
-        <thead>
-          <tr>
-            <th className="etnias-table-header">Etnia</th>
-            <th className="etnias-table-header">Acciones</th>
+        <thead className="etnias-table-header">
+          <tr className="etnias-table-row">
+            <th className="etnias-header-name">Etnia</th>
+            <th className="etnias-header-actions">Acciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="etnias-table-body">
           {etnias.map((etnia) => (
             <EtniaRow
               key={etnia.id}

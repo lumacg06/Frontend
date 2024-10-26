@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const EditModal = ({ etnia, onClose, onSave }) => {
   const [etniaValue, setEtniaValue] = React.useState(etnia.etnia);
+
+  useEffect(() => {
+    setEtniaValue(etnia.etnia); // Actualiza el valor cuando cambie la etnia
+  }, [etnia]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -10,20 +14,23 @@ const EditModal = ({ etnia, onClose, onSave }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <h2 className="etnias-table-header">Editar etnia</h2>
-        <form onSubmit={handleSubmit}>
-          <label>
+    <div className="edit-modal-overlay">
+      <div className="edit-modal-content">
+        <h2 className="edit-modal-header">Editar etnia</h2>
+        <form className="edit-modal-form" onSubmit={handleSubmit}>
+          <label className="edit-modal-label">
             Etnia:
             <input
+              className="edit-modal-input"
               type="text"
               value={etniaValue}
               onChange={(event) => setEtniaValue(event.target.value)}
             />
           </label>
-          <button type="submit">Guardar</button>
-          <button type="button" onClick={onClose}>
+          <button className="edit-modal-save-button" type="submit">
+            Guardar
+          </button>
+          <button className="edit-modal-cancel-button" type="button" onClick={onClose}>
             Cancelar
           </button>
         </form>

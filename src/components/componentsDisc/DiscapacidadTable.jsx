@@ -3,16 +3,16 @@ import DiscapacidadRow from './DiscpacidadRow';
 
 const DiscapacidadesTable = ({ discapacidades, onEdit, onDelete }) => {
   return (
-    <div className="container">
+    <div className="container-dicapacidad">
       {/* Tabla de Discapacidades */}
       <table className="discapacidades-table">
-        <thead>
-          <tr>
-            <th className="discapacidades-table-header">Categoría</th>
-            <th className="discapacidades-table-header">Acciones</th>
+        <thead className="discapacidades-thead">
+          <tr className = "discapacidades-table-row">
+            <th className="discapacidades-header-name">Categoría</th>
+            <th className="discapacidades-header-actions">Acciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="discapacidades-table-body">
           {discapacidades.map((discapacidad) => (
             <DiscapacidadRow
               key={discapacidad.id}

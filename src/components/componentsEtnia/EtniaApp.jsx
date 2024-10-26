@@ -99,12 +99,17 @@ const EtniaApp = () => {
   };
 
   return (
-    <div>
-      <h1>Etnias</h1>
+    <div className="etnia-app-container">
+      <h1 className="etnia-app-title">Etnias</h1>
 
-      <EtniaForm etnia={editing || {}} onSave={handleSave} />
+      <EtniaForm
+        className="etnia-form"
+        etnia={editing || {}}
+        onSave={handleSave}
+      />
 
       <EtniasTable
+        className="etnias-table"
         etnias={etnias}
         onEdit={handleEdit}
         onDelete={handleDelete}
@@ -112,6 +117,7 @@ const EtniaApp = () => {
 
       {editing && (
         <EditModal
+          className="etnia-edit-modal"
           etnia={editing}
           onClose={handleCloseModal}
           onSave={handleSave}

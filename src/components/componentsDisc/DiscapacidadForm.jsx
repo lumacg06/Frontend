@@ -1,48 +1,67 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const DiscapacidadForm = ({ discapacidad, onSave = () => {} }) => {
-  if (!discapacidad) return null;
+const DiscapacidadForm = ({ discapacidad, onSave }) => {
+  // Inicializar con string vacío si discapacidad?.categoria es undefined
+  const [discapacidadValue, setDiscapacidadValue] = useState('');
 
-  const [discapacidadValue, setDiscapacidadValue] = useState(
-    discapacidad.discapacidad
-  );
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newDiscapacidad = { discapacidad: discapacidadValue };
+  useEffect(() => {
+    // Actualizar el valor cuando cambia la prop discapacidad
     if (discapacidad) {
-      newDiscapacidad.id = discapacidad.id;
+      setDiscapacidadValue(discapacidad.categoria || '');
     }
+  }, [discapacidad]);
 
-    // Hacer una solicitud HTTP a la base de datos
-    fetch('/api/discapacidades', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newDiscapacidad),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    const newDiscapacidad = {
+      categoria: discapacidadValue,
+      ...(discapacidad?.id && { id: discapacidad.id })
+    };
 
-    onSave(newDiscapacidad); // Llamar a onSave para guardar la discapacidad
-    setDiscapacidadValue(''); // Limpiar el campo de la etnia
+    try {
+      let response;
+      
+      if (discapacidad?.id) {
+        response = await axios.put(
+          `http://localhost:8080/api/discapacidades/${discapacidad.id}`,
+          newDiscapacidad
+        );
+      } else {
+        response = await axios.post(
+          'http://localhost:8080/api/discapacidades',
+          newDiscapacidad
+        );
+      }
+
+      onSave(response.data);
+      setDiscapacidadValue('');
+      
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
-    <form className="discapacidad-form" onSubmit={handleSubmit}>
+    <form className="discapacidad-form-container" onSubmit={handleSubmit}>
       <label className="discapacidad-form-label">
-        Nueva Discapacidad:
+        {discapacidad?.id ? 'Editar' : 'Nueva'} categoría:
         <input
           className="discapacidad-form-input"
           type="text"
           value={discapacidadValue}
-          onChange={(event) => setDiscapacidadValue(event.target.value)}
+          onChange={(e) => setDiscapacidadValue(e.target.value)}
+          maxLength={255}
+          required
         />
       </label>
-      <button className="discapacidad-form-button" type="submit">
-        Guardar
+      <button 
+        className="discapacidad-submit-button" 
+        type="submit"
+        disabled={!discapacidadValue.trim()}
+      >
+        {discapacidad?.id ? 'Actualizar' : 'Guardar'}
       </button>
     </form>
   );

@@ -1,15 +1,13 @@
-/* Estilos generales */
-.app-container {
-  font-family: 'Roboto', sans-serif; 
-  background-color: #f8f9fa;
-  color: #333;
-}
+
+
+/* Contenedor principal */
+
 
 /* Estilos de la barra de navegación */
 .navbar-custom {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem; 
+  padding: 1rem 2rem;
 }
 
 .navbar-custom .navbar-brand {
@@ -23,33 +21,58 @@
 }
 
 .navbar-custom .nav-link:hover {
-  color: #28a745; 
+  color: #28a745;
 }
-.app-container {
-  font-family: 'Open Sans', sans-serif;
-  background-color: transparent;
-  color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+
+
 
 .main-section {
   flex-grow: 1;
 }
 
-.footer-section {
-  background-color: #2f4f7f;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+html,
+body {
+  margin: 0;
+  /* Eliminar márgenes por defecto */
+  padding: 0;
+  /* Eliminar relleno por defecto */
 }
 
+.footer-section {
+  background-color: #2c3e50;
+  /* Color de fondo oscuro */
+  color: #ecf0f1;
+  /* Color del texto claro */
+  padding: 1rem;
+  /* Espaciado superior e inferior */
+  text-align: center;
+  /* Alineación centrada */
+  font-family: "Arial", sans-serif;
+  /* Ajusta la altura para que se extienda hasta el final de la página */
+  position: fixed;
+  /* Fija el pie de página al fondo */
+  bottom: 0;
+  /* Alinea el pie de página en la parte inferior */
+  left: 0;
+  /* Alinea el pie de página a la izquierda */
+  width: 100%;
+  /* Ancho completo */
+  height: 50px;
+  /* Ajusta la altura según sea necesario */
+  padding: 20px;
+  /* Espaciado dentro del pie de página */
+  margin: 0;
+  /* Retira márgenes predeterminados */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+}
 
+.footer-section p {
+  margin: 0;
+  /* Eliminar margen por defecto */
+  font-size: 14px;
+  /* Tamaño de fuente */
+}
 
 .hero-section {
   height: 100vh;
@@ -97,4 +120,3 @@
   border-radius: 50%;
   margin-right: 1rem;
 }
-

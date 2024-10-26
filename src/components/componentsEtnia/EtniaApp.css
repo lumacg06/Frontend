@@ -1,306 +1,263 @@
-/* Estilo general del cuerpo */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #d41d1d;
-    color: #333;
-    height: 100%;
-    font-size: 12px; /* Reducido el tamaño de la fuente global */
-    overflow-x: hidden; /* Evita el desbordamiento horizontal */
-}
-
 /* Contenedor principal */
-.app-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 20px; /* Añadido espacio para no estar pegado al borde */
-    box-sizing: border-box;
-    width: 100%; /* Asegura que el ancho sea 100% */
-    max-width: 1200px; /* Controla el ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-}
-
-/* Encabezados */
-h1, h2, h3 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 24px; /* Reducido el tamaño de los encabezados */
-}
-
-/* Párrafos */
-p {
-    font-size: 1.5rem; /* Ajustado el tamaño de los párrafos */
-    color: #a39595;
-    margin-bottom: 20px;
-}
-
-/* Contenedor de contenido */
-.container {
+.etnias-container {
     width: 100%;
-    max-width: 60%; /* Ajuste al ancho del contenedor */
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    margin-bottom: 40px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-/* Tabla */
-table {
-    width: 100%; /* Mantiene el ancho de la tabla */
-    border-collapse: collapse;
-    margin: 0 0 30px 0;
-    table-layout: fixed;
-}
-
-th, td {
-    padding: 10px; /* Reducido el padding */
-    border: 1px solid #525252;
-    text-align: left;
-    line-height: 1.5;
-    font-size: 18px; /* Reducido el tamaño de las celdas */
-}
-
-/* Encabezado de la tabla */
-thead {
-    background-color: #eaeaea;
-}
-
-thead th {
-    padding: 10px;
-    background-color: #f2f2f2;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px; /* Reducido el tamaño de los encabezados */
-}
-
-/* Anchos de las columnas */
-th.etnia-header {
-    width: 25%;
-}
-
-th.actions-header {
-    width: 25%;
-    text-align: center;
-    background-color: #000000;
-}
-
-/* Establecer un ancho fijo a las celdas para mantener el tamaño */
-td {
-    min-width: 100px;
-    font-size: 20px; /* Ajuste al tamaño de la fuente en las celdas */
-}
-
-/* Filas alternas */
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Resaltar filas al pasar el cursor */
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Botones dentro de las celdas de "Acciones" */
-tbody td button {
-    padding: 8px 16px; /* Reducido el tamaño del botón */
-    margin: 0 5px;
-    background-color: #000000d6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px; /* Reducido el tamaño de la fuente en los botones */
-}
-
-tbody td button:hover {
-    background-color: #1008f0d7;
-}
-
-
-/* Estilos para el div.pantalla en pantalla completa */
-.pantalla {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 80px;
-    background-color: #9e4343;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0);
-    border-radius: 0;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-/* Estilo del formulario de etnia */
-.etnia-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 80%;
-    position: relative;
-    padding: 15px; /* Reducido el padding */
-    visibility: visible;
-}
-
-/* Ocultar el formulario si no está en modo edición */
-.etnia-form.hidden {
-    display: none;
-}
-
-/* Etiqueta "Nueva Etnia" */
-.etnia-form-label {
-    font-size: 18px; /* Reducido el tamaño de la etiqueta */
-    margin-bottom: 8px;
-    color: #333;
-}
-
-/* Campo de entrada para la etnia */
-.etnia-form-input {
-    padding: 10px;
-    font-size: 16px; /* Reducido el tamaño de la entrada */
-    margin-bottom: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-/* Botón de envío */
-.etnia-form-button {
-    padding: 10px 20px;
-    background-color: #000000d6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    width: auto;
-    max-width: 200px;
-    margin-top: 10px;
-}
-
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 3rem auto;
+    overflow-x: auto;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
   }
   
-  .modal-content {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    width: 50%;
-    max-width: 500px;
+  /* Estilos de la tabla */
+  .etnias-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    border: 3px solid #000000;
   }
   
   .etnias-table-header {
-    padding: 10px;
-    background-color: #eaeaea;
+    background-color: #000000;
+    color: white;
+  }
+  
+  .etnias-table-row {
+    border: 2px solid #000000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .etnias-table-row:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .etnias-header-name,
+  .etnias-header-actions {
+    padding: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border: 2px solid #000000;
+    background-color: #000000;
+  }
+  
+  .etnias-header-name {
+    width: 70%;
+  }
+  
+  .etnias-header-actions {
+    width: 30%;
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
+  }
+  
+  .etnias-table-body tr {
+    border: 2px solid #000000;
+  }
+  
+  .etnias-table-body td {
+    padding: 1.3rem;
+    color: #000000;
+    font-size: 1.1rem;
+    border: 2px solid #000000;
+  }
+  
+  /* Botones de acción */
+  .etnia-action-button {
+    margin: 6px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .etnia-edit-button {
+    background-color: #f1c40f;
+    color: #000000;
+    margin-right: 12px;
+  }
+  
+  .etnia-edit-button:hover {
+    background-color: #f39c12;
+    transform: translateY(-2px);
+  }
+  
+  .etnia-delete-button {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .etnia-delete-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+  }
+  
+  /* Campos de entrada */
+  .etnia-input-field {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    color: #000000;
+  }
+  
+  .etnia-input-field:focus {
+    border-color: #000000;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+  
+  /* Botón de envío */
+  .etnia-submit-button {
+    background-color: #000000;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .etnia-submit-button:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+  }
+  
+  /* Modal de edición */
+  .edit-modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 600px;
+    max-width: 95vw;
+    border: 2px solid #000000;
+  }
+  
+  .edit-modal-content h2 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .edit-modal-save-button,
+  .edit-modal-cancel-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 8px;
+  }
+  
+  .edit-modal-save-button {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .edit-modal-save-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+  }
+  
+  .edit-modal-cancel-button {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .edit-modal-cancel-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+  }
+  
+  /* Etiquetas */
+  .edit-modal-label,
+  .etnia-form-label {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  label.etnia-form-label{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .etnias-container {
+      margin: 1.5rem;
+      padding: 1.5rem;
+    }
+  
+    .etnias-header-name,
+    .etnias-header-actions {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    .etnias-table-body td {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    .edit-modal-content {
+      width: 95%;
+      padding: 2rem;
+    }
+    
+    .etnia-action-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
   }
 
-/* Estilo del formulario de discapacidad */
-.discapacidad-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
+  /* Nueva etnia */
+
+  .etnia-input-field {
     width: 100%;
-    max-width: 80%;
-    position: relative;
-    padding: 15px; /* Reducido el padding */
-    visibility: visible;
-}
-
-/* Ocultar el formulario si no está en modo edición */
-.discapacidad-form.hidden {
-    display: none;
-}
-
-/* Etiqueta "Nueva Discapacidad" */
-.discapacidad-form-label {
-    font-size: 18px; /* Reducido el tamaño de la etiqueta */
-    margin-bottom: 8px;
-    color: #333;
-}
-
-/* Campo de entrada para la discapacidad */
-.discapacidad-form-input {
-    padding: 10px;
-    font-size: 16px; /* Reducido el tamaño de la entrada */
-    margin-bottom: 10px;
-    width: 100%;
+    max-width: 300px;
+    padding: 10px 15px;
+    margin: 2px; /* Cambia el margen inferior a 2px para acercar el botón */
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-/* Botón de envío */
-.discapacidad-form-button {
-    padding: 10px 20px;
-    background-color: #000000d6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    width: auto;
-    max-width: 200px;
-    margin-top: 10px;
-}
-
-/* Modal overlay */
-.discapacidad-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+ 
+  
+  label.edit-modal-label {
+    font-size: 30px;
+    font-weight: 600; /* Para hacerla más visible */
+    margin-bottom: 1px; /* Aumentar el espacio inferior */
+    display: block; /* Asegurar que ocupe su propia línea */
+  }
+  .etnia-form-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-/* Modal content */
-.discapacidad-modal-content {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    width: 50%;
-    max-width: 500px;
-}
-
-/* Encabezado de la tabla de discapacidades */
-.discapacidades-table-header {
-    padding: 10px;
-    background-color: #eaeaea;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-}
+    padding: 1px;
+    margin-bottom: 2px;
+  }
+  .etnia-submit-button {
+    background-color: #1f1ccd;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5%;
+    margin: 0; /* Elimina el margen para acercar más el botón */
+    margin-top: 15px; /* Ajusta el margen superior a 2px para que esté más cerca del input */
+  }
