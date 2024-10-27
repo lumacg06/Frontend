@@ -17,7 +17,7 @@ const DniModal = ({ dni, onClose, onSave }) => {
   return (
     <div className="dnimodal-overlay">
       <div className="dnimodal-content">
-        <h2 className="dnimodal-title">Editar Tipo Documento</h2>
+        <h2 className="dnimodal-title">Editar tipo de documento</h2>
         <form className="dnimodal-form" onSubmit={handleSubmit}>
           <table className="dnimodal-table">
             <tbody>

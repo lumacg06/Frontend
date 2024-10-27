@@ -70,7 +70,7 @@ const App = () => {
                     className="nav-link"
                     onClick={handleClose}
                   >
-                    Tipo Documentos
+                    Tipo documentos
                   </Nav.Link>
                   <Nav.Link
                     href="#contacto"

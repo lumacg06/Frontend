@@ -70,7 +70,6 @@
 
 
 
-
 .dni-input-field:focus {
   border-color: #000000;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
@@ -94,6 +93,9 @@
   transform: translateY(-2px);
 }
 
+
+/* Estilo del modal */
+
 /* Modal de edición (si lo necesitas) */
 .dni-modal-content {
   position: fixed;
@@ -110,25 +112,13 @@
   border: 2px solid #000000;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Estilos existentes */
 .dniform-container {
   padding: 20px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* ... (resto de tus estilos existentes) ... */
 
 /* Estilos para la ventana modal */
 .dni-modal-overlay {
@@ -155,62 +145,26 @@
   animation: modalFadeIn 0.3s ease-out;
 }
 
-/* Animación para la aparición del modal */
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Opcional: Botón para cerrar el modal */
-.dni-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #666;
-  padding: 5px;
-}
-
-.dni-modal-close:hover {
-  color: #333;
-}
-
-/* Estilos para hacer el modal responsive */
-@media (max-width: 600px) {
-  .dni-modal-container {
-    width: 95%;
-    margin: 10px;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-}
-
-/* Prevenir scroll en el body cuando el modal está abierto */
-body.modal-open {
-  overflow: hidden;
-}
-
-/* Título del modal */
-.dni-modal-title {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
 /* Contenido del modal */
 .dni-modal-content {
   margin-bottom: 20px;
+}
+
+/* Espaciado entre los labels y los títulos */
+label.dniform-label-documento{
+  font-size: 12px;
+  font-weight: 600; /* Para hacerla más visible */
+  margin-bottom:1px; /* Aumentar el espacio inferior */
+  padding: 1px;
+  margin-top: 20px;
+  
+}
+label.dniform-label-codigo{
+  font-size: 12px;
+  font-weight: 600; /* Para hacerla más visible */
+  margin-bottom:6px; /* Aumentar el espacio inferior */
+  padding: 1px;
+  margin-top: 20px;
 }
 
 /* Estilos para los botones dentro del modal */
@@ -222,16 +176,64 @@ body.modal-open {
 }
 
 /* Efecto de hover para los botones */
-.dniform-button-save:hover:not(:disabled) {
+button.dniform-button-save:hover:not(:disabled) {
   background-color: #45a049;
 }
 
 .dniform-button-cancel:hover {
   background-color: #da190b;
 }
+.dniform-button-cancel{
+  background-color: #da190b;
+  color: white;
+}
+.dniform-button-save{
+  background-color: #45a049;
+  font-size: 12px;
+  color: white;
+  margin: 20px;
+}
+/* Colocar el h2 encima del label */
+.dni-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Transición suave para los botones */
-.dniform-button-save,
-.dniform-button-cancel {
-  transition: background-color 0.3s ease;
+.dni-modal-content h2 {
+  margin-bottom: 10px;
+}
+
+h1.dni-app-title{
+  color:rgba(255, 255, 255, 0);
+}
+.dni-add-button{
+  background-color: #1f1ccd;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    margin: 0; /* Elimina el margen para acercar más el botón */
+    margin-top: 15px; /* Ajusta el margen superior a 2px para que esté más cerca del input */
+}
+
+.dni-button-edit {
+  background-color: #f1c40f;
+  color: #000000;
+  margin-right: 12px;
+}
+.dni-button-edit  {
+  background-color: #f39c12;
+  transform: translateY(-2px);
+}
+
+.dni-button-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+
+.dni-button-delete {
+  background-color: #c0392b;
+  transform: translateY(-2px);
 }
