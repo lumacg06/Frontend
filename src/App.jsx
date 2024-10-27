@@ -4,6 +4,7 @@ import { Navbar, Container, Nav, Button, Offcanvas } from "react-bootstrap";
 import EtniaApp from "./components/componentsEtnia/EtniaApp";
 import DiscapacidadApp from "./components/componentsDisc/DiscapacidadApp";
 import DniApp from "./components/componentsDNI/DniApp";
+import PaisesApp from "./components/componentsPaises/PaisesApp";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css"; // Import your CSS file
@@ -73,6 +74,14 @@ const App = () => {
                     Tipo documentos
                   </Nav.Link>
                   <Nav.Link
+                    as={Link}
+                    to="/paises"
+                    className="nav-link"
+                    onClick={handleClose}
+                  >
+                    Paises
+                  </Nav.Link>
+                  <Nav.Link
                     href="#contacto"
                     className="nav-link"
                     onClick={handleClose}
@@ -92,7 +101,7 @@ const App = () => {
               <Route path="/etnia" element={<EtniaApp />} />
               <Route path="/discapacidad" element={<DiscapacidadApp />} />
               <Route path="/tipodocumento" element={<DniApp />} />
-
+              <Route path="/paises" element={<PaisesApp />} />
               <Route
                 path="/"
                 element={

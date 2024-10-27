@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from "react";
 
-const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
+const PaisesForm = ({ pais, onSave = () => {}, onCancel = () => {} }) => {
   // Evitar renderizar el formulario vacío
-  if (!dni) return null;
+  if (!pais) return null;
 
-  const [nombre, setNombre] = useState(dni.nombre || ""); // Cambiar a 'nombre'
-  const [codigo, setCodigo] = useState(dni.codigo || "");
+  const [nombre, setNombre] = useState(pais.nombre || ""); // Cambiar a 'nombre'
+  const [codigoIso, setCodigoIso] = useState(pais.codigoiso || ""); // Cambiar a 'codigoIso'
 
   useEffect(() => {
-    if (dni) {
-      setNombre(dni.nombre || ""); // Cambiar a 'nombre'
-      setCodigo(dni.codigo || "");
+    if (pais) {
+      setNombre(pais.nombre || ""); 
+      setCodigoIso(pais.codigoiso || ""); // Cambiar a 'codigoIso'
     }
-  }, [dni]);
+  }, [pais]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const newDni = {
+    const newPais = {
       nombre, // Cambiar 'tipoDocumento' a 'nombre'
-      codigo,
+      codigoiso: codigoIso, // Cambiar 'codigo' a 'codigoiso'
     };
 
-    if (dni && dni.id) {
-      newDni.id = dni.id; // Si es una actualización, agregar el ID
+    if (pais && pais.id) {
+      newPais.id = pais.id; // Si es una actualización, agregar el ID
     }
 
     // Hacer una solicitud HTTP a la base de datos
-    const method = dni && dni.id ? "PUT" : "POST";
-    const url = `http://localhost:8080/api/tipos-documento${
-      dni && dni.id ? `/${dni.id}` : ""
+    const method = pais && pais.id ? "PUT" : "POST";
+    const url = `http://localhost:8080/api/paises${
+      pais && pais.id ? `/${pais.id}` : ""
     }`;
 
     try {
@@ -38,7 +38,7 @@ const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newDni),
+        body: JSON.stringify(newPais),
       });
 
       if (!response.ok) {
@@ -51,7 +51,7 @@ const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
       }
 
       const data = await response.json();
-      onSave(data); // Llamar a onSave para guardar el DNI
+      onSave(data); // Llamar a onSave para guardar el país
       resetForm(); // Limpiar el formulario
     } catch (error) {
       console.error("Error al guardar:", error.message);
@@ -61,7 +61,7 @@ const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
 
   const resetForm = () => {
     setNombre(""); // Limpiar el campo de nombre
-    setCodigo(""); // Limpiar el campo de código
+    setCodigoIso(""); // Limpiar el campo de código ISO
   };
 
   const handleCancel = () => {
@@ -70,49 +70,49 @@ const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
   };
 
   return (
-    <form className="dniform-container" onSubmit={handleSubmit}>
-      <h2>{dni && dni.id ? "Editar" : "Agregar"} Tipo de Documento</h2>
+    <form className="paisform-container" onSubmit={handleSubmit}>
+      <h2>{pais && pais.id ? "Editar" : "Agregar"} País</h2>
 
       <div className="form-group">
-        <label className="dniform-label-documento" htmlFor="nombre">
-          Nombre del Documento:
+        <label className="paisform-label-nombre" htmlFor="nombre">
+          Nombre del País:
         </label>
         <input
           id="nombre"
-          className="dniform-input-documento"
+          className="paisform-input-nombre"
           type="text"
           value={nombre} // Usar 'nombre'
           onChange={(e) => setNombre(e.target.value)} // Usar 'nombre'
           required
-          placeholder="Ingrese el nombre del documento"
+          placeholder="Ingrese el nombre del país"
         />
       </div>
 
       <div className="form-group">
-        <label className="dniform-label-codigo" htmlFor="codigo">
-          Código:
+        <label className="paisform-label-codigo" htmlFor="codigoIso">
+          Código ISO:
         </label>
         <input
-          id="codigo"
-          className="dniform-input-codigo"
+          id="codigoIso"
+          className="paisform-input-codigo"
           type="text"
-          value={codigo}
-          onChange={(e) => setCodigo(e.target.value)}
+          value={codigoIso}
+          onChange={(e) => setCodigoIso(e.target.value)}
           required
-          placeholder="Ingrese el código"
+          placeholder="Ingrese el código ISO"
         />
       </div>
 
-      <div className="dniform-buttons">
+      <div className="paisform-buttons">
         <button
-          className="dniform-button-save"
+          className="paisform-button-save"
           type="submit"
-          disabled={!nombre.trim() || !codigo.trim()} // Deshabilitar si campos vacíos
+          disabled={!nombre.trim() || !codigoIso.trim()} // Deshabilitar si campos vacíos
         >
-          {dni && dni.id ? "Actualizar" : "Guardar"}
+          {pais && pais.id ? "Actualizar" : "Guardar"}
         </button>
         <button
-          className="dniform-button-cancel"
+          className="paisform-button-cancel"
           type="button"
           onClick={handleCancel}
         >
@@ -123,4 +123,4 @@ const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
   );
 };
 
-export default DniForm;
+export default PaisesForm;
