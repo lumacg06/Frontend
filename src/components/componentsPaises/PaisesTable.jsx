@@ -1,5 +1,5 @@
-import React from 'react';
-import PaisRow from './PaisesRow';
+import React from "react";
+import PaisRow from "./PaisesRow";
 
 const PaisesTable = ({ paises, onDelete, onEdit }) => {
   return (
@@ -13,18 +13,19 @@ const PaisesTable = ({ paises, onDelete, onEdit }) => {
       </thead>
       <tbody className="paises-table-body">
         {paises.length > 0 ? (
-          paises.map(pais => (
-            <PaisRow 
-              key={pais.codigoiso} 
-              pais={pais} 
-              onDelete={onDelete} 
-              onEdit={onEdit} 
+          paises.map((pais, index) => (
+            <PaisRow
+              key={`${pais.codigoiso}-${index}`}
+              pais={pais}
+              onDelete={onDelete}
+              onEdit={onEdit}
             />
           ))
         ) : (
           <tr>
             <td colSpan="3" className="paises-table-no-results">
-              No se encontraron resultados.
+              {" "}
+              No se encontraron resultados.{" "}
             </td>
           </tr>
         )}

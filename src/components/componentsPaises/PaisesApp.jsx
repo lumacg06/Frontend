@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./PaisesApp.css"; // Asegúrate de crear este archivo CSS para los estilos
-import PaisesTable from "./PaisesTable"; // Componente para mostrar la tabla de países
-import PaisModal from "./PaisesModal"; // Componente para el modal de edición/agregado
+import "./PaisesApp.css"; 
+import PaisesTable from "./PaisesTable"; 
+import PaisModal from "./PaisesModal"; 
+import PaisSearch from "./PaisesSearch"; // Asegúrate de que la ruta sea correcta
 import Swal from "sweetalert2";
 
 const PaisesApp = () => {
   const [paises, setPaises] = useState([]);
   const [editing, setEditing] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(""); // Estado para el término de búsqueda
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetchPaises();
@@ -47,7 +48,7 @@ const PaisesApp = () => {
         axios
           .delete(`http://localhost:8080/api/paises/${id}`)
           .then(() => {
-            setPaises(paises.filter((pais) => pais.id !== id));
+            setPaises((prevPaises) => prevPaises.filter((pais) => pais.id !== id));
             Swal.fire({
               title: "¡Eliminado!",
               text: "El país ha sido eliminado correctamente.",
@@ -73,7 +74,9 @@ const PaisesApp = () => {
           `http://localhost:8080/api/paises/${editing.id}`,
           newPais
         );
-        setPaises(paises.map((pais) => (pais.id === editing.id ? response.data : pais)));
+        setPaises((prevPaises) => 
+          prevPaises.map((pais) => (pais.id === editing.id ? response.data : pais))
+        );
         Swal.fire({
           title: "¡Actualizado!",
           text: "El país ha sido actualizado correctamente.",
@@ -81,7 +84,7 @@ const PaisesApp = () => {
         });
       } else {
         const response = await axios.post("http://localhost:8080/api/paises", newPais);
-        setPaises([...paises, response.data]);
+        setPaises((prevPaises) => [...prevPaises, response.data]);
         Swal.fire({
           title: "¡Creado!",
           text: "El país ha sido creado correctamente.",
@@ -111,31 +114,30 @@ const PaisesApp = () => {
 
   // Filtrar países según el término de búsqueda
   const filteredPaises = paises.filter((pais) =>
-    pais.nombre.toLowerCase().includes(searchTerm.toLowerCase()) // Filtrar por coincidencia
+    pais.nombre.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="paises-app-container">
       <h1 className="paises-app-title">Gestión de Países</h1>
-
-      <input
-        type="text"
-        placeholder="Buscar país..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="paises-search-input" // Asegúrate de agregar estilos para esta clase
+  
+      {/* Componente de búsqueda */}
+      <PaisSearch 
+        searchTerm={searchTerm} 
+        onSearchChange={setSearchTerm} 
       />
-
+  
       <button onClick={handleOpenModal} className="paises-add-button">
         Agregar País
       </button>
-
+  
       <PaisesTable
-        paises={filteredPaises} // Usar la lista filtrada onEdit={handleEdit}
+        paises={filteredPaises} // Usar la lista filtrada
         onDelete={handleDelete}
+        onEdit={handleEdit}
         className="paises-table"
       />
-
+  
       {isModalOpen && (
         <div className="paises-modal-overlay">
           <div className="paises-modal-container">
