@@ -8,6 +8,7 @@ import PaisesApp from "./components/componentsPaises/PaisesApp";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css"; // Import your CSS file
+import MunicipiosApp from "./components/componentsMuncipios/MunicipiosApp";
 
 const App = () => {
   const [show, setShow] = React.useState(false);
@@ -82,6 +83,14 @@ const App = () => {
                     Paises
                   </Nav.Link>
                   <Nav.Link
+                    as={Link}
+                    to="/municipios"
+                    className="nav-link"
+                    onClick={handleClose}
+                  >
+                    Municipios
+                  </Nav.Link>
+                  <Nav.Link
                     href="#contacto"
                     className="nav-link"
                     onClick={handleClose}
@@ -102,6 +111,8 @@ const App = () => {
               <Route path="/discapacidad" element={<DiscapacidadApp />} />
               <Route path="/tipodocumento" element={<DniApp />} />
               <Route path="/paises" element={<PaisesApp />} />
+              <Route path="/municipios" element={<MunicipiosApp />} />
+
               <Route
                 path="/"
                 element={
