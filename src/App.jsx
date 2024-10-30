@@ -5,10 +5,10 @@ import EtniaApp from "./components/componentsEtnia/EtniaApp";
 import DiscapacidadApp from "./components/componentsDisc/DiscapacidadApp";
 import DniApp from "./components/componentsDNI/DniApp";
 import PaisesApp from "./components/componentsPaises/PaisesApp";
-
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css"; // Import your CSS file
+import "./App.css"; 
 import MunicipiosApp from "./components/componentsMuncipios/MunicipiosApp";
+import OcupacionesApp from "./components/componentsOcupacion/OcupacionesApp";
 
 const App = () => {
   const [show, setShow] = React.useState(false);
@@ -91,6 +91,14 @@ const App = () => {
                     Municipios
                   </Nav.Link>
                   <Nav.Link
+                    as={Link}
+                    to="/ocupaciones"
+                    className="nav-link"
+                    onClick={handleClose}
+                  >
+                    Ocupaciones
+                  </Nav.Link>
+                  <Nav.Link
                     href="#contacto"
                     className="nav-link"
                     onClick={handleClose}
@@ -112,6 +120,8 @@ const App = () => {
               <Route path="/tipodocumento" element={<DniApp />} />
               <Route path="/paises" element={<PaisesApp />} />
               <Route path="/municipios" element={<MunicipiosApp />} />
+              <Route path="/ocupaciones" element={<OcupacionesApp />} />
+
 
               <Route
                 path="/"
