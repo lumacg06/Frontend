@@ -4,13 +4,13 @@ const OcupacionesForm = ({ ocupacion, onSave = () => {}, onCancel = () => {} }) 
   // Evitar renderizar el formulario vacío
   if (!ocupacion) return null;
 
-  const [nombre, setNombre] = useState(ocupacion.nombre || ""); // Cambiar a 'nombre'
-  const [codigoOcupacion, setCodigoOcupacion] = useState(ocupacion.codigoocupacion || ""); // Cambiar a 'codigoOcupacion'
+  const [descripcion, setDescripcion] = useState(ocupacion.descripcion || ""); // Cambiado a 'descripcion'
+  const [codigoOcupacion, setCodigoOcupacion] = useState(ocupacion.codigo || ""); // Cambiado a 'codigo'
 
   useEffect(() => {
     if (ocupacion) {
-      setNombre(ocupacion.nombre || ""); 
-      setCodigoOcupacion(ocupacion.codigoocupacion || ""); // Cambiar a 'codigoOcupacion'
+      setDescripcion(ocupacion.descripcion || ""); // Cambiado a 'descripcion'
+      setCodigoOcupacion(ocupacion.codigo || ""); // Cambiado a 'codigo'
     }
   }, [ocupacion]);
 
@@ -18,8 +18,8 @@ const OcupacionesForm = ({ ocupacion, onSave = () => {}, onCancel = () => {} }) 
     event.preventDefault();
 
     const newOcupacion = {
-      nombre,
-      codigoocupacion: codigoOcupacion, 
+      descripcion: descripcion, // Cambiado a 'descripcion'
+      codigo: codigoOcupacion, // Cambiado a 'codigo'
     };
 
     if (ocupacion && ocupacion.id) {
@@ -58,8 +58,8 @@ const OcupacionesForm = ({ ocupacion, onSave = () => {}, onCancel = () => {} }) 
   };
 
   const resetForm = () => {
-    setNombre(""); // Limpiar el campo de nombre
-    setCodigoOcupacion(""); // Limpiar el campo de código de ocupación
+    setDescripcion(""); // Limpiar el campo de descripcion
+    setCodigoOcupacion(""); // Limpiar el campo de código
   };
 
   const handleCancel = () => {
@@ -72,23 +72,23 @@ const OcupacionesForm = ({ ocupacion, onSave = () => {}, onCancel = () => {} }) 
       <h2>{ocupacion && ocupacion.id ? "Editar" : "Agregar"} Ocupación</h2>
 
       <div className="form-group">
-        <label className="ocupacionesform-label-nombre" htmlFor="nombre">
-          Nombre de la Ocupación:
+        <label className="ocupacionesform-label-descripcion" htmlFor="descripcion">
+          Descripción de la Ocupación:
         </label>
         <input
-          id="nombre"
-          className="ocupacionesform-input-nombre"
+          id="descripcion"
+          className="ocupacionesform-input-descripcion"
           type="text"
-          value={nombre} 
-          onChange={(e) => setNombre(e.target.value)} 
+          value={descripcion} 
+          onChange={(e) => setDescripcion(e.target.value)} 
           required
-          placeholder="Ingrese el nombre de la ocupación"
+          placeholder="Ingrese la descripción de la ocupación"
         />
       </div>
 
       <div className="form-group">
         <label className="ocupacionesform-label-codigo" htmlFor="codigoOcupacion">
-          Código Ocupación:
+          Código:
         </label>
         <input
           id="codigoOcupacion"
@@ -105,7 +105,7 @@ const OcupacionesForm = ({ ocupacion, onSave = () => {}, onCancel = () => {} }) 
         <button
           className="ocupacionesform-button-save"
           type="submit"
-          disabled={!nombre.trim() || !codigoOcupacion.trim()} // Deshabilitar si campos vacíos
+          disabled={!descripcion.trim() || !codigoOcupacion.trim()} // Deshabilitar si campos vacíos
         >
           {ocupacion && ocupacion.id ? "Actualizar" : "Guardar"}
         </button>

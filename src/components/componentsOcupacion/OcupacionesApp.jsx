@@ -3,7 +3,7 @@ import axios from "axios";
 import "./OcupacionesApp.css"; 
 import OcupacionesTable from "./OcupacionesTable"; 
 import OcupacionesModal from "./OcupacionesModal"; 
-import OcupacionesSearch from "./OcupacionesSearch"; // Asegúrate de que la ruta sea correcta
+import OcupacionesSearch from "./OcupacionesSearch"; 
 import Swal from "sweetalert2";
 
 const OcupacionesApp = () => {
@@ -35,36 +35,34 @@ const OcupacionesApp = () => {
     setIsModalOpen(true);
   };
 
-  const handleDelete = (id) => {
-    Swal.fire({
+  const handleDelete = async (codigo) => { // Cambiado a 'codigo'
+    const result = await Swal.fire({
       title: "¿Estás seguro de eliminar esta ocupación?",
       text: "No podrás revertir esta acción.",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Sí, eliminar",
       cancelButtonText: "No, cancelar",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:8080/api/ocupaciones/${id}`)
-          .then(() => {
-            setOcupaciones((prevOcupaciones) => prevOcupaciones.filter((ocupacion) => ocupacion.id !== id));
-            Swal.fire({
-              title: "¡Eliminado!",
-              text: "La ocupación ha sido eliminada correctamente.",
-              icon: "success",
-            });
-          })
-          .catch((error) => {
-            console.error(error);
-            Swal.fire({
-              title: "Error",
-              text: "No se pudo eliminar la ocupación",
-              icon: "error",
-            });
-          });
-      }
     });
+
+    if (result.isConfirmed) {
+      try {
+        await axios.delete(`http://localhost:8080/api/ocupaciones/${codigo}`); // Cambiado a 'codigo'
+        setOcupaciones((prevOcupaciones) => prevOcupaciones.filter((ocupacion) => ocupacion.codigo !== codigo)); // Cambiado a 'codigo'
+        Swal.fire({
+          title: "¡Eliminado!",
+          text: "La ocupación ha sido eliminada correctamente.",
+          icon: "success",
+        });
+      } catch (error) {
+        console.error(error);
+        Swal.fire({
+          title: "Error",
+          text: "No se pudo eliminar la ocupación",
+          icon: "error",
+        });
+      }
+    }
   };
 
   const handleSave = async (newOcupacion) => {
@@ -114,7 +112,7 @@ const OcupacionesApp = () => {
 
   // Filtrar ocupaciones según el término de búsqueda
   const filteredOcupaciones = ocupaciones.filter((ocupacion) =>
-    ocupacion.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+    ocupacion.descripcion && ocupacion.descripcion.toLowerCase().includes(searchTerm.toLowerCase()) // Cambiado a 'descripcion'
   );
 
   return (
@@ -142,7 +140,7 @@ const OcupacionesApp = () => {
         <div className="ocupaciones-modal-overlay">
           <div className="ocupaciones-modal-container">
             <OcupacionesModal
-              ocupacion={editing || { codigoocupacion: "", nombre: "" }}
+              ocupacion={editing || { codigo: "", descripcion: "" }} // Cambiado a 'codigo' y 'descripcion'
               onSave={handleSave}
               onCancel={handleCloseModal}
               className="ocupaciones-modal"

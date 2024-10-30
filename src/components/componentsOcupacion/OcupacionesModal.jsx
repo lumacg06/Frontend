@@ -3,15 +3,17 @@ import React from "react";
 
 const OcupacionesModal = ({ ocupacion, onClose, onSave }) => {
   const [codigoOcupacion, setCodigoOcupacion] = React.useState(
-    ocupacion.codigoocupacion
+    ocupacion.codigo // Cambiado a 'codigo'
   );
-  const [nombre, setNombre] = React.useState(ocupacion.nombre);
+  const [descripcion, setDescripcion] = React.useState(
+    ocupacion.descripcion // Cambiado a 'descripcion'
+  );
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const updatedOcupacion = {
-      codigoocupacion: codigoOcupacion,
-      nombre: nombre,
+      codigo: codigoOcupacion, // Cambiado a 'codigo'
+      descripcion: descripcion, // Cambiado a 'descripcion'
     };
     onSave(updatedOcupacion);
   };
@@ -26,7 +28,7 @@ const OcupacionesModal = ({ ocupacion, onClose, onSave }) => {
               <tr className="ocupacionmodal-row">
                 <td className="ocupacionmodal-cell">
                   <label className="ocupacionmodal-label">
-                    Código Ocupación:
+                    Código:
                     <input
                       className="ocupacionmodal-input"
                       type="text"
@@ -39,12 +41,12 @@ const OcupacionesModal = ({ ocupacion, onClose, onSave }) => {
                 </td>
                 <td className="ocupacionmodal-cell">
                   <label className="ocupacionmodal-label">
-                    Nombre:
+                    Descripción:
                     <input
                       className="ocupacionmodal-input"
                       type="text"
-                      value={nombre}
-                      onChange={(event) => setNombre(event.target.value)}
+                      value={descripcion}
+                      onChange={(event) => setDescripcion(event.target.value)} // Cambiado a 'setDescripcion'
                     />
                   </label>
                 </td>

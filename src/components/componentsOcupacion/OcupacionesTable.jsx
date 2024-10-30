@@ -6,8 +6,8 @@ const OcupacionesTable = ({ ocupaciones, onDelete, onEdit }) => {
     <table className="ocupaciones-table">
       <thead className="ocupaciones-table-header">
         <tr className="ocupaciones-table-row">
-          <th className="ocupaciones-table-header-cell">Nombre</th>
-          <th className="ocupaciones-table-header-cell">Código Ocupación</th>
+          <th className="ocupaciones-table-header-cell">Descripción</th>
+          <th className="ocupaciones-table-header-cell">Código</th>
           <th className="ocupaciones-table-header-cell">Acciones</th>
         </tr>
       </thead>
@@ -15,7 +15,7 @@ const OcupacionesTable = ({ ocupaciones, onDelete, onEdit }) => {
         {ocupaciones.length > 0 ? (
           ocupaciones.map((ocupacion, index) => (
             <OcupacionRow
-              key={`${ocupacion.codigoocupacion}-${index}`}
+              key={`${ocupacion.codigo}-${index}`} // Cambiado a 'codigo'
               ocupacion={ocupacion}
               onDelete={onDelete}
               onEdit={onEdit}
