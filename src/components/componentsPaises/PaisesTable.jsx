@@ -3,11 +3,12 @@ import PaisRow from "./PaisesRow";
 
 const PaisesTable = ({ paises, onDelete, onEdit }) => {
   return (
+    <div className= "paises-container">
     <table className="paises-table">
       <thead className="paises-table-header">
         <tr className="paises-table-row">
+        <th className="paises-table-header-cell">Código ISO</th>
           <th className="paises-table-header-cell">Nombre</th>
-          <th className="paises-table-header-cell">Código ISO</th>
           <th className="paises-table-header-cell">Acciones</th>
         </tr>
       </thead>
@@ -31,6 +32,7 @@ const PaisesTable = ({ paises, onDelete, onEdit }) => {
         )}
       </tbody>
     </table>
+    </div>
   );
 };
 

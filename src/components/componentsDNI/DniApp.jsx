@@ -120,7 +120,7 @@ const DniApp = () => {
       <h1 className="dni-app-title">Tipos de Documento</h1>
 
       <button onClick={handleOpenModal} className="dni-add-button">
-        Agregar Tipo Documento
+        Agregar tipo de documento
       </button>
 
       <DniTable

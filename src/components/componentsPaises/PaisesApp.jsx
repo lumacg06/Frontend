@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./PaisesApp.css"; 
-import PaisesTable from "./PaisesTable"; 
-import PaisModal from "./PaisesModal"; 
+import "./PaisesApp.css";
+import "./PaisesModal.css";
+import PaisesTable from "./PaisesTable";
+import PaisModal from "./PaisesModal";
 import PaisSearch from "./PaisesSearch"; // Asegúrate de que la ruta sea correcta
 import Swal from "sweetalert2";
 
@@ -36,6 +37,7 @@ const PaisesApp = () => {
   };
 
   const handleDelete = (id) => {
+    console.log("ID a eliminar:", id); // Verifica el ID que se está pasando
     Swal.fire({
       title: "¿Estás seguro de eliminar este país?",
       text: "No podrás revertir esta acción.",
@@ -48,19 +50,26 @@ const PaisesApp = () => {
         axios
           .delete(`http://localhost:8080/api/paises/${id}`)
           .then(() => {
-            setPaises((prevPaises) => prevPaises.filter((pais) => pais.id !== id));
+            setPaises((prevPaises) =>
+              prevPaises.filter((pais) => pais.id !== id)
+            ); // Eliminamos el país de la lista
             Swal.fire({
               title: "¡Eliminado!",
               text: "El país ha sido eliminado correctamente.",
               icon: "success",
+              confirmButtonText: "Aceptar",
             });
           })
           .catch((error) => {
-            console.error(error);
+            console.error("Error al eliminar el país:", error);
+            if (error.response) {
+              console.error("Detalles del error:", error.response.data);
+            }
             Swal.fire({
               title: "Error",
               text: "No se pudo eliminar el país",
               icon: "error",
+              confirmButtonText: "Aceptar",
             });
           });
       }
@@ -74,8 +83,10 @@ const PaisesApp = () => {
           `http://localhost:8080/api/paises/${editing.id}`,
           newPais
         );
-        setPaises((prevPaises) => 
-          prevPaises.map((pais) => (pais.id === editing.id ? response.data : pais))
+        setPaises((prevPaises) =>
+          prevPaises.map((pais) =>
+            pais.id === editing.id ? response.data : pais
+          )
         );
         Swal.fire({
           title: "¡Actualizado!",
@@ -83,7 +94,10 @@ const PaisesApp = () => {
           icon: "success",
         });
       } else {
-        const response = await axios.post("http://localhost:8080/api/paises", newPais);
+        const response = await axios.post(
+          "http://localhost:8080/api/paises",
+          newPais
+        );
         setPaises((prevPaises) => [...prevPaises, response.data]);
         Swal.fire({
           title: "¡Creado!",
@@ -120,31 +134,28 @@ const PaisesApp = () => {
   return (
     <div className="paises-app-container">
       <h1 className="paises-app-title">Gestión de Países</h1>
-  
+
       {/* Componente de búsqueda */}
-      <PaisSearch 
-        searchTerm={searchTerm} 
-        onSearchChange={setSearchTerm} 
-      />
-  
+      <PaisSearch searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+
       <button onClick={handleOpenModal} className="paises-add-button">
         Agregar País
       </button>
-  
+
       <PaisesTable
         paises={filteredPaises} // Usar la lista filtrada
         onDelete={handleDelete}
         onEdit={handleEdit}
         className="paises-table"
       />
-  
+
       {isModalOpen && (
         <div className="paises-modal-overlay">
           <div className="paises-modal-container">
             <PaisModal
               pais={editing || { codigoiso: "", nombre: "" }}
               onSave={handleSave}
-              onCancel={handleCloseModal}
+              onClose={handleCloseModal} // Asegúrate de que esto sea onClose
               className="paises-modal"
             />
           </div>

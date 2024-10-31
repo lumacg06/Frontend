@@ -75,7 +75,7 @@
   }
   
   .etnia-edit-button {
-    background-color: #f1c40f;
+    background-color: #27ae60;
     color: #000000;
     margin-right: 12px;
   }
@@ -131,100 +131,64 @@
     transform: translateY(-2px);
   }
   
-  /* Modal de edición */
-  .edit-modal-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 600px;
-    max-width: 95vw;
-    border: 2px solid #000000;
-  }
-  
-  .edit-modal-content h2 {
-    color: #000000;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-  }
-  
-  .edit-modal-save-button,
-  .edit-modal-cancel-button {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0 8px;
-  }
-  
-  .edit-modal-save-button {
-    background-color: #2ecc71;
-    color: white;
-  }
-  
-  .edit-modal-save-button:hover {
-    background-color: #27ae60;
-    transform: translateY(-2px);
-  }
-  
-  .edit-modal-cancel-button {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  .edit-modal-cancel-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
-  }
-  
-  /* Etiquetas */
-  .edit-modal-label,
-  .etnia-form-label {
-    font-size: 1.3rem;
-    color: #000000;
-    margin-bottom: 0.8rem;
-    display: block;
-  }
+ /* Modal de edición */
+ .edit-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem; /* Reduce el padding para hacer el modal más pequeño */
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 400px; /* Reduce el ancho del modal */
+  max-width: 95vw;
+  border: 2px solid #000000;
+}
+
+.edit-modal-content h2 {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Reduce el margen inferior */
+  font-size: 1.3rem; /* Cambia el tamaño de la fuente del título a 13px */
+}
+
+.edit-modal-save-button,
+.edit-modal-cancel-button {
+  padding: 10px 20px; /* Reduce el padding de los botones */
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem; /* Cambia el tamaño de la fuente de los botones a 13px */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 5px; /* Reduce el margen entre los botones */
+}
+
+.edit-modal-save-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.edit-modal-save-button:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.edit-modal-cancel-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.edit-modal-cancel-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
   label.etnia-form-label{
     font-size: 18px;
     margin-bottom: 10px;
   }
-  /* Responsive */
-  @media screen and (max-width: 768px) {
-    .etnias-container {
-      margin: 1.5rem;
-      padding: 1.5rem;
-    }
   
-    .etnias-header-name,
-    .etnias-header-actions {
-      padding: 1rem;
-      font-size: 1.1rem;
-    }
-  
-    .etnias-table-body td {
-      padding: 1rem;
-      font-size: 1.1rem;
-    }
-  
-    .edit-modal-content {
-      width: 95%;
-      padding: 2rem;
-    }
-    
-    .etnia-action-button {
-      padding: 10px 20px;
-      font-size: 1rem;
-    }
-  }
 
   /* Nueva etnia */
 
@@ -238,11 +202,10 @@
     font-size: 16px;
     
   }
- 
   
   label.edit-modal-label {
-    font-size: 30px;
-    margin-bottom: 1px; /* Aumentar el espacio inferior */
+    font-size: 13px;
+    margin-bottom: 5px; /* Aumentar el espacio inferior */
     display: block; /* Asegurar que ocupe su propia línea */
   }
   .etnia-form-container {
