@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DniApp.css";
+import "./DniModal.css"
 import DniTable from "./DniTable";
 import DniForm from "./DniForm";
 import Swal from "sweetalert2";

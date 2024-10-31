@@ -94,62 +94,6 @@
 }
 
 
-/* Estilo del modal */
-
-/* Modal de edición (si lo necesitas) */
-.dni-modal-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  width: 600px;
-  max-width: 95vw;
-  border: 2px solid #000000;
-}
-
-/* Estilos existentes */
-.dniform-container {
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para la ventana modal */
-.dni-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.dni-modal-container {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-  animation: modalFadeIn 0.3s ease-out;
-}
-
-/* Contenido del modal */
-.dni-modal-content {
-  margin-bottom: 20px;
-}
-
 /* Espaciado entre los labels y los títulos */
 label.dniform-label-documento{
   font-size: 12px;
@@ -167,13 +111,6 @@ label.dniform-label-codigo{
   margin-top: 20px;
 }
 
-/* Estilos para los botones dentro del modal */
-.dni-modal-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
-}
 
 /* Efecto de hover para los botones */
 button.dniform-button-save:hover:not(:disabled) {
@@ -192,16 +129,6 @@ button.dniform-button-save:hover:not(:disabled) {
   font-size: 12px;
   color: white;
   margin: 20px;
-}
-/* Colocar el h2 encima del label */
-.dni-modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dni-modal-content h2 {
-  margin-bottom: 10px;
 }
 
 h1.dni-app-title{

@@ -1,0 +1,130 @@
+/* Estilos para el modal de DNI */
+.dni-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .dni-modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 3rem; /* Padding para el modal */
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 600px; /* Ancho del modal */
+    max-width: 95vw; /* Ancho máximo en pantallas pequeñas */
+    border: 2px solid #000000; /* Borde del modal */
+  }
+  
+  /* Título del modal */
+  .dni-modal-title {
+    color: #000000; /* Color del texto del título */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 1.5rem; /* Margen inferior */
+    font-size: 1.3rem; /* Tamaño de la fuente del título */
+  }
+  
+  /* Contenedor del formulario */
+  .dniform-container {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para el formulario */
+  .dni-modal-form {
+    width: 100%; /* Ancho completo del formulario */
+  }
+  
+  /* Etiquetas del formulario */
+  .dni-modal-label {
+    font-size: 0.9rem; /* Tamaño de la fuente de las etiquetas */
+    color: #000000; /* Color del texto de las etiquetas */
+    margin-bottom: 0.5rem; /* Margen inferior */
+    display: block; /* Asegura que ocupe su propia línea */
+  }
+  
+  /* Campos de entrada */
+  .dni-modal-input {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Padding interno */
+    margin-bottom: 1rem; /* Margen inferior */
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de la fuente */
+  }
+  
+  /* Estilos para los botones dentro del modal */
+  div.dniform-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Botones dentro del modal */
+  .dniform-button-save,
+  .dniform-button-cancel {
+    padding: 10px 20px; /* Padding de los botones */
+    border: none; /* Sin borde */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de la fuente de los botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave */
+    margin: 0 5px; /* Margen entre los botones */
+  }
+  
+  /* Colocar el h2 encima del label */
+  .dni-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dni-modal-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.3rem; /* Tamaño de la fuente del título */
+    color: #000000; /* Color del texto del título */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  /* Estilos para los botones del modal de DNI, iguales a los del modal de países */
+  .dniform-button-save{
+  background-color: #2ecc71; /* Color de fondo de los botones */
+  color: #ffffff; /* Color del texto de los botones */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Padding de los botones */
+  font-size: 11px; /* Tamaño de la fuente de los botones */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: all 0.3s ease; /* Transición suave */
+  }
+  
+  .dniform-button-cancel {
+    background-color: #e74c3c; /* Color de fondo de los botones */
+    color: #ffffff; /* Color del texto de los botones */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Padding de los botones */
+    font-size: 11px; /* Tamaño de la fuente de los botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave */
+  }
+  
+  .dni-modal-button-save:hover,
+  .dni-modal-button-cancel:hover {
+    background-color: #2980b9; /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }

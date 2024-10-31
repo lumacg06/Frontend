@@ -71,7 +71,7 @@ const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
 
   return (
     <form className="dniform-container" onSubmit={handleSubmit}>
-      <h2>{dni && dni.id ? "Editar" : "Agregar"} Tipo de Documento</h2>
+      <h2>{dni && dni.id ? "Editar" : "Agregar"} tipo de documento</h2>
 
       <div className="form-group">
         <label className="dniform-label-documento" htmlFor="nombre">
