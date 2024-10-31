@@ -112,7 +112,7 @@ const DniForm = ({ dni, onSave = () => {}, onCancel = () => {} }) => {
           {dni && dni.id ? "Actualizar" : "Guardar"}
         </button>
         <button
-          className="dniform-button-cancel"
+          className="dniform-button-cancelar"
           type="button"
           onClick={handleCancel}
         >

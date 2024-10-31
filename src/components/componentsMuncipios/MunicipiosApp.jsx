@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./MunicipiosApp.css"; 
-import MunicipiosTable from "./MunicipiosTable"; 
-import MunicipiosModal from "./MunicipiosModal"; 
-import MunicipiosSearch from "./MunicipiosSearch"; // Asegúrate de que la ruta sea correcta
+import "./MunicipiosApp.css";
+import "./MunicipiosModal.css";
+import MunicipiosTable from "./MunicipiosTable";
+import MunicipiosModal from "./MunicipiosModal";
+import MunicipiosSearch from "./MunicipiosSearch";
 import Swal from "sweetalert2";
 
 const MunicipiosApp = () => {
@@ -48,7 +49,9 @@ const MunicipiosApp = () => {
         axios
           .delete(`http://localhost:8080/api/municipios/${id}`)
           .then(() => {
-            setMunicipios((prevMunicipios) => prevMunicipios.filter((municipio) => municipio.id !== id));
+            setMunicipios((prevMunicipios) =>
+              prevMunicipios.filter((municipio) => municipio.id !== id)
+            );
             Swal.fire({
               title: "¡Eliminado!",
               text: "El municipio ha sido eliminado correctamente.",
@@ -71,11 +74,13 @@ const MunicipiosApp = () => {
     try {
       if (editing) {
         const response = await axios.put(
-          `http://localhost:8080/api/municipios/${editing.id}`,
+          `http://localhost:8080/api/municipios/${editing.codigomunicipio}`, // Asegúrate de usar el ID correcto
           newMunicipio
         );
-        setMunicipios((prevMunicipios) => 
-          prevMunicipios.map((municipio) => (municipio.id === editing.id ? response.data : municipio))
+        setMunicipios((prevMunicipios) =>
+          prevMunicipios.map((municipio) =>
+            municipio.codigomunicipio === editing.codigomunicipio ? response.data : municipio
+          )
         );
         Swal.fire({
           title: "¡Actualizado!",
@@ -83,7 +88,10 @@ const MunicipiosApp = () => {
           icon: "success",
         });
       } else {
-        const response = await axios.post("http://localhost:8080/api/municipios", newMunicipio);
+        const response = await axios.post(
+          "http://localhost:8080/api/municip ios",
+          newMunicipio
+        );
         setMunicipios((prevMunicipios) => [...prevMunicipios, response.data]);
         Swal.fire({
           title: "¡Creado!",
@@ -120,25 +128,25 @@ const MunicipiosApp = () => {
   return (
     <div className="municipios-app-container">
       <h1 className="municipios-app-title">Gestión de Municipios</h1>
-  
+
       {/* Componente de búsqueda */}
-      <MunicipiosSearch 
-        searchTerm={searchTerm} 
-        onSearchChange={setSearchTerm} 
+      <MunicipiosSearch
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
       />
-  
+
       <button onClick={handleOpenModal} className="municipios-add-button">
         Agregar Municipio
       </button>
-  
+
       <MunicipiosTable
         municipios={filteredMunicipios} // Usar la lista filtrada
         onDelete={handleDelete}
         onEdit={handleEdit}
         className="municipios-table"
       />
-  
-      { isModalOpen && (
+
+      {isModalOpen && (
         <div className="municipios-modal-overlay">
           <div className="municipios-modal-container">
             <MunicipiosModal

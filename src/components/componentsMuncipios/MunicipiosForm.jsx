@@ -4,13 +4,13 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
   // Evitar renderizar el formulario vacío
   if (!municipio) return null;
 
-  const [nombre, setNombre] = useState(municipio.nombre || ""); // Cambiar a 'nombre'
-  const [codigoMunicipio, setCodigoMunicipio] = useState(municipio.codigomunicipio || ""); // Cambiar a 'codigoMunicipio'
+  const [nombre, setNombre] = useState(municipio.nombre || ""); 
+  const [codigoMunicipio, setCodigoMunicipio] = useState(municipio.codigomunicipio || ""); 
 
   useEffect(() => {
     if (municipio) {
       setNombre(municipio.nombre || ""); 
-      setCodigoMunicipio(municipio.codigomunicipio || ""); // Cambiar a 'codigoMunicipio'
+      setCodigoMunicipio(municipio.codigomunicipio || ""); 
     }
   }, [municipio]);
 
@@ -25,7 +25,6 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
     if (municipio && municipio.id) {
       newMunicipio.id = municipio.id; 
     }
-
 
     const method = municipio && municipio.id ? "PUT" : "POST";
     const url = `http://localhost:8080/api/municipios${
@@ -51,6 +50,7 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
       }
 
       const data = await response.json();
+      console.log('Municipio guardado:', data); // Verificar el municipio guardado
       onSave(data); 
       resetForm(); 
     } catch (error) {
@@ -59,13 +59,13 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
   };
 
   const resetForm = () => {
-    setNombre(""); // Limpiar el campo de nombre
-    setCodigoMunicipio(""); // Limpiar el campo de código del municipio
+    setNombre(""); 
+    setCodigoMunicipio(""); 
   };
 
   const handleCancel = () => {
     resetForm();
-    onCancel(); // Llamar a onCancel para manejar la cancelación
+    onCancel(); 
   };
 
   return (
@@ -106,7 +106,7 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
         <button
           className="municipiosform-button-save"
           type="submit"
-          disabled={!nombre.trim() || !codigoMunicipio.trim()} // Deshabilitar si campos vacíos
+          disabled={! nombre.trim() || !codigoMunicipio.trim()} 
         >
           {municipio && municipio.id ? "Actualizar" : "Guardar"}
         </button>

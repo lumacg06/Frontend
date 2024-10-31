@@ -1,126 +1,190 @@
-/* MunicipiosApp.css */
+.municipios-container {
+  width: 100%;
+  margin: 3rem auto;
+  overflow-x: auto;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
 
-/* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  .municipios-app-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .municipios-app-title {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos del botón */
-  .municipios-add-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .municipios-add-button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Estilos de la tabla */
-  .municipios-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .municipios-table th,
-  .municipios-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .municipios-table th {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  /* Estilos del modal */
-  .municipios-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .municipios-modal-container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Estilos de búsqueda */
-  .municipios-search {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .municipios-search input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .municipios-search button {
-    padding: 10px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .municipios-search button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 600px) {
-    .municipios-app-container {
-      padding: 10px;
-    }
-  
-    .municipios-add-button,
-    .municipios-search button {
-      width: 100%;
-    }
-  }
+/* Estilos de la tabla */
+.municipios-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  /* Asegúrate de que la tabla tenga un ancho mínimo */
+  border: 3px solid #000;
+}
+
+.municipios-table-header {
+  background-color: #000;
+  color: #fff;
+}
+
+.municipios-table-row {
+  border: 2px solid #000;
+  transition: background-color 0.3s ease;
+}
+
+.municipios-table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.municipios-table-header-cell {
+  padding: 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: 2px solid #000;
+  background-color: #000;
+}
+
+.municipios-header-nombre {
+  width: 40%;
+}
+
+.municipios-header-codigo {
+  width: 30%;
+}
+
+.municipios-header-acciones {
+  width: 30%;
+  text-align: center;
+}
+
+.municipios-table-body tr {
+  border: 2px solid #000;
+}
+
+.municipios-table-body td {
+  padding: 1.3rem;
+  color: #000;
+  font-size: 1.1rem;
+  border: 2px solid #000;
+}
+
+/* Estilos de los inputs */
+.municipios-input-field:focus {
+  border-color: #000;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* Botón de añadir */
+.municipios-add-button {
+  background-color: #47d444;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.municipios-add-button:hover {
+  background-color: #1a1a99;
+  transform: translateY(-2px);
+}
+
+/* Espaciado entre los labels y los títulos */
+label.municipios-label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding: 1px;
+  margin-top: 20px;
+}
+
+/* Estilos para el input de búsqueda */
+.municipios-search-input {
+  position: fixed;
+  /* Fija el input en la ventana del navegador */
+  top: 75px;
+  /* Ajusta la distancia desde la parte superior de la ventana */
+  right: 220px;
+  /* Ajusta la distancia desde la derecha de la ventana */
+  padding: 10px;
+  /* Espaciado interno del input */
+  border: 1px solid #ccc;
+  /* Borde del input */
+  border-radius: 4px;
+  /* Bordes redondeados */
+  width: 300px;
+  /* Ancho del input */
+  font-size: 16px;
+  /* Tamaño de fuente */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra para el input */
+  z-index: 10;
+  /* Asegura que el input esté por encima de otros elementos */
+}
+
+/* Efecto de enfoque en el input */
+.municipios-search-input:focus {
+  border-color: #007bff;
+  /* Color del borde al enfocar */
+  outline: none;
+  /* Sin contorno */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Sombra al enfocar */
+}
+
+/* Botones */
+.municipios-button-edit {
+  background-color: #2ecc71;
+  color: white;
+  margin-right: 12px;
+}
+
+.municipios-button-edit:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.municipios-button-cancel {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.municipios-button-cancel:hover {
+  background-color: #c0392b;
+  transform: translateY (-2px);
+}
+
+/* Estilos para el input de búsqueda */
+.municipio-search-input {
+  position: fixed;
+  /* Fija el input en la ventana del navegador */
+  top: 75px;
+  /* Ajusta la distancia desde la parte superior de la ventana */
+  right: 220px;
+  /* Ajusta la distancia desde la derecha de la ventana */
+  padding: 10px;
+  /* Espaciado interno del input */
+  border: 1px solid #ccc;
+  /* Borde del input */
+  border-radius: 4px;
+  /* Bordes redondeados */
+  width: 300px;
+  /* Ancho del input */
+  font-size: 16px;
+  /* Tamaño de fuente */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra para el input */
+  z-index: 10;
+  /* Asegura que el input esté por encima de otros elementos */
+
+}
+
+/* Efecto de enfoque en el input */
+.municipio-search-input:focus {
+  border-color: #2bff00;
+  /* Color del borde al enfocar */
+  outline: none;
+  /* Sin contorno */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Sombra al enfocar */
+}

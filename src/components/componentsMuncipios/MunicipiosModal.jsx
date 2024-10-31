@@ -1,11 +1,15 @@
-import React from "react";
-// import "./MunicipioModal.css"; // Asegúrate de crear este archivo CSS para los estilos
+import React, { useEffect, useState } from "react";
 
-const MunicipiosModal = ({ municipio, onClose, onSave }) => {
-  const [codigoMunicipio, setCodigoMunicipio] = React.useState(
-    municipio.codigomunicipio
-  );
-  const [nombre, setNombre] = React.useState(municipio.nombre);
+const MunicipiosModal = ({ municipio, onSave, onCancel }) => {
+  const [codigoMunicipio, setCodigoMunicipio] = useState("");
+  const [nombre, setNombre] = useState("");
+
+  useEffect(() => {
+    if (municipio) {
+      setCodigoMunicipio(municipio.codigomunicipio || "");
+      setNombre(municipio.nombre || "");
+    }
+  }, [municipio]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,9 +35,7 @@ const MunicipiosModal = ({ municipio, onClose, onSave }) => {
                       className="municipiomodal-input"
                       type="text"
                       value={codigoMunicipio}
-                      onChange={(event) =>
-                        setCodigoMunicipio(event.target.value)
-                      }
+                      onChange={(event) => setCodigoMunicipio(event.target.value)}
                     />
                   </label>
                 </td>
@@ -57,7 +59,7 @@ const MunicipiosModal = ({ municipio, onClose, onSave }) => {
                   <button
                     className="municipiomodal-button-cancel"
                     type="button"
-                    onClick={onClose}
+                    onClick={onCancel}
                   >
                     Cancelar
                   </button>

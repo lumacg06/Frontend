@@ -1,8 +1,11 @@
+
+
 import React from "react";
 import MunicipioRow from "./MunicipiosRow";
 
 const MunicipiosTable = ({ municipios, onDelete, onEdit }) => {
   return (
+    <div className="municipios-container">
     <table className="municipios-table">
       <thead className="municipios-table-header">
         <tr className="municipios-table-row">
@@ -30,6 +33,7 @@ const MunicipiosTable = ({ municipios, onDelete, onEdit }) => {
         )}
       </tbody>
     </table>
+    </div>
   );
 };
 

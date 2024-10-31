@@ -95,53 +95,42 @@
 
 
 /* Espaciado entre los labels y los títulos */
-label.dniform-label-documento{
+label.dniform-label-documento {
   font-size: 12px;
-  font-weight: 600; /* Para hacerla más visible */
-  margin-bottom:1px; /* Aumentar el espacio inferior */
+  font-weight: 600;
+  /* Para hacerla más visible */
+  margin-bottom: 1px;
+  /* Aumentar el espacio inferior */
   padding: 1px;
   margin-top: 20px;
-  
+
 }
-label.dniform-label-codigo{
+
+label.dniform-label-codigo {
   font-size: 12px;
-  font-weight: 600; /* Para hacerla más visible */
-  margin-bottom:6px; /* Aumentar el espacio inferior */
+  font-weight: 600;
+  /* Para hacerla más visible */
+  margin-bottom: 6px;
+  /* Aumentar el espacio inferior */
   padding: 1px;
   margin-top: 20px;
 }
 
 
-/* Efecto de hover para los botones */
-button.dniform-button-save:hover:not(:disabled) {
-  background-color: #45a049;
+h1.dni-app-title {
+  color: rgba(255, 255, 255, 0);
 }
 
-.dniform-button-cancel:hover {
-  background-color: #da190b;
-}
-.dniform-button-cancel{
-  background-color: #da190b;
-  color: white;
-}
-.dniform-button-save{
-  background-color: #45a049;
-  font-size: 12px;
-  color: white;
-  margin: 20px;
-}
-
-h1.dni-app-title{
-  color:rgba(255, 255, 255, 0);
-}
-.dni-add-button{
+.dni-add-button {
   background-color: #1f1ccd;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 3px;
-    margin: 0; /* Elimina el margen para acercar más el botón */
-    margin-top: 15px; /* Ajusta el margen superior a 2px para que esté más cerca del input */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  margin: 0;
+  /* Elimina el margen para acercar más el botón */
+  margin-top: 15px;
+  /* Ajusta el margen superior a 2px para que esté más cerca del input */
 }
 
 .dni-button-edit {
@@ -160,3 +149,5 @@ h1.dni-app-title{
   background-color: #c0392b;
   transform: translateY(-2px);
 }
+
+
