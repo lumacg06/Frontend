@@ -3,7 +3,10 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #91ced8;
+    background-color: #f6fdfe00; /* Color de fondo de respaldo */
+    background-image: url('./Imagenes/MejorH.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
     color: #333;
     height: 100%;
     font-size: 12px; /* Reducido el tamaño de la fuente global */
@@ -22,4 +25,5 @@ body, html {
     width: 100%; /* Asegura que el ancho sea 100% */
     max-width: 1200px; /* Controla el ancho máximo del contenedor */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
+    background-color: rgba(226, 235, 226, 0.61); /* Color de fondo con opacidad para ver la imagen */
 }
