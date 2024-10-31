@@ -160,7 +160,7 @@ label.municipios-label {
   /* Fija el input en la ventana del navegador */
   top: 75px;
   /* Ajusta la distancia desde la parte superior de la ventana */
-  right: 220px;
+  right: 300px;
   /* Ajusta la distancia desde la derecha de la ventana */
   padding: 10px;
   /* Espaciado interno del input */
@@ -187,4 +187,23 @@ label.municipios-label {
   /* Sin contorno */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   /* Sombra al enfocar */
+}
+
+.municipio-button-edit {
+  background-color: #2ecc71;
+  color: white;
+  margin-right: 12px;
+}
+.municipio-button-edit:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+.municipio-button-delete {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.municipio-button-delete:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
 }
