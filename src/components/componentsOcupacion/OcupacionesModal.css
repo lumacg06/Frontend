@@ -14,19 +14,26 @@
 
 /* Estilos para el contenido del modal */
 .ocupacionmodal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: white;
-    border-radius: 12px;
+    border: 2px solid #ccc; /* Borde alrededor del contenido */
+    border-radius: 12px; /* Bordes redondeados */
     padding: 2rem;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     width: 400px; /* Ancho del modal */
     max-width: 90%; /* Ancho máximo para pantallas pequeñas */
+    border: 2px solid #000; /* Borde del modal */
 }
 
 /* Título del modal */
 .ocupacionmodal-title {
+    color: #000; /* Color del texto del título */
+    text-align: center; /* Centrar el texto */
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.3rem;
     text-align: center;
 }
 
@@ -37,18 +44,18 @@
 }
 
 .ocupacionmodal-row {
-    border-bottom: 1px solid #ccc; /* Línea divisoria entre filas */
+    border-bottom: 2px solid #000;
 }
-
 .ocupacionmodal-cell {
     padding: 1rem;
 }
 
 /* Estilos para las etiquetas y los inputs */
 .ocupacionmodal-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-size: 0.9rem; /* Tamaño de la fuente de las etiquetas */
+    color: #000; /* Color del texto de las etiquetas */
+    margin-bottom: 0.5rem; /* Margen inferior */
+    display: block; /* Asegura que ocupe su propia línea */
 }
 
 .ocupacionmodal-input {

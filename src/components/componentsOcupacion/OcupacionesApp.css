@@ -116,10 +116,9 @@ label.ocupacionesform-label-codigo {
 }
 
 /* Estilos para el input de búsqueda (si se necesita) */
-.ocupaciones-search-input {
+.ocupacion-search-input {
   position: fixed;
-  top: 75px;
-  right: 220px;
+  right: 433px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -130,7 +129,7 @@ label.ocupacionesform-label-codigo {
 }
 
 /* Efecto de enfoque en el input de búsqueda */
-.ocupaciones-search-input:focus {
+.ocupacion-search-input:focus {
   border-color: #33ff00;
   outline: none;
   box-shadow: 0 0 5px #33ff00;
@@ -153,5 +152,19 @@ label.ocupacionesform-label-codigo {
 }
 .ocupacion-delete-button:hover{
   background-color: #ff1900;
+  transform: translateY(-2px);
+}
+.ocupaciones-add-button {
+  background-color: #47d444;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ocupaciones-add-button:hover {
+  background-color: #1a1a99;
   transform: translateY(-2px);
 }

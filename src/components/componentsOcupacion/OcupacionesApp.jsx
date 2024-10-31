@@ -36,7 +36,7 @@ const OcupacionesApp = () => {
     setIsModalOpen(true);
   };
 
-  const handleDelete = async (codigo) => { // Cambiado a 'codigo'
+  const handleDelete = async (codigo) => {
     const result = await Swal.fire({
       title: "¿Estás seguro de eliminar esta ocupación?",
       text: "No podrás revertir esta acción.",
@@ -48,8 +48,8 @@ const OcupacionesApp = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:8080/api/ocupaciones/${codigo}`); // Cambiado a 'codigo'
-        setOcupaciones((prevOcupaciones) => prevOcupaciones.filter((ocupacion) => ocupacion.codigo !== codigo)); // Cambiado a 'codigo'
+        await axios.delete(`http://localhost:8080/api/ocupaciones/${codigo}`);
+        setOcupaciones((prevOcupaciones) => prevOcupaciones.filter((ocupacion) => ocupacion.codigo !== codigo));
         Swal.fire({
           title: "¡Eliminado!",
           text: "La ocupación ha sido eliminada correctamente.",
@@ -113,7 +113,7 @@ const OcupacionesApp = () => {
 
   // Filtrar ocupaciones según el término de búsqueda
   const filteredOcupaciones = ocupaciones.filter((ocupacion) =>
-    ocupacion.descripcion && ocupacion.descripcion.toLowerCase().includes(searchTerm.toLowerCase()) // Cambiado a 'descripcion'
+    ocupacion.descripcion && ocupacion.descripcion.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -128,29 +128,29 @@ const OcupacionesApp = () => {
   
       <button onClick={handleOpenModal} className="ocupaciones-add-button">
         Agregar Ocupación
-      </button>
+        </button>
   
-      <OcupacionesTable
-        ocupaciones={filteredOcupaciones} // Usar la lista filtrada
-        onDelete={handleDelete}
-        onEdit={handleEdit}
-        className="ocupaciones-table"
-      />
-  
-      { isModalOpen && (
-        <div className="ocupaciones-modal-overlay">
-          <div className="ocupaciones-modal-container">
-            <OcupacionesModal
-              ocupacion={editing || { codigo: "", descripcion: "" }} // Cambiado a 'codigo' y 'descripcion'
-              onSave={handleSave}
-              onCancel={handleCloseModal}
-              className="ocupaciones-modal"
-            />
-          </div>
-        </div>
-      )}
+  <OcupacionesTable
+    ocupaciones={filteredOcupaciones} // Usar la lista filtrada
+    onDelete={handleDelete}
+    onEdit={handleEdit}
+    className="ocupaciones-table"
+  />
+
+  {isModalOpen && (
+    <div className="ocupaciones-modal-overlay">
+      <div className="ocupaciones-modal-container">
+        <OcupacionesModal
+          ocupacion={editing || { codigo: "", descripcion: "" }} // Cambiado a 'codigo' y 'descripcion'
+          onSave={handleSave}
+          onCancel={handleCloseModal} // Asegúrate de que esto esté bien
+          className="ocupaciones-modal"
+        />
+      </div>
     </div>
-  );
+  )}
+</div>
+);
 };
 
 export default OcupacionesApp;

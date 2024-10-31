@@ -1,7 +1,7 @@
 import React from "react";
 // import "./OcupacionModal.css"; // Asegúrate de crear este archivo CSS para los estilos
 
-const OcupacionesModal = ({ ocupacion, onClose, onSave }) => {
+const OcupacionesModal = ({ ocupacion, onCancel, onSave }) => {
   const [codigoOcupacion, setCodigoOcupacion] = React.useState(
     ocupacion.codigo // Cambiado a 'codigo'
   );
@@ -46,7 +46,7 @@ const OcupacionesModal = ({ ocupacion, onClose, onSave }) => {
                       className="ocupacionmodal-input"
                       type="text"
                       value={descripcion}
-                      onChange={(event) => setDescripcion(event.target.value)} // Cambiado a 'setDescripcion'
+                      onChange={(event) => setDescripcion(event.target.value)}
                     />
                   </label>
                 </td>
@@ -59,7 +59,7 @@ const OcupacionesModal = ({ ocupacion, onClose, onSave }) => {
                   <button
                     className="ocupacionmodal-button-cancel"
                     type="button"
-                    onClick={onClose}
+                    onClick={onCancel} // Asegúrate de que esto esté bien
                   >
                     Cancelar
                   </button>
@@ -72,5 +72,4 @@ const OcupacionesModal = ({ ocupacion, onClose, onSave }) => {
     </div>
   );
 };
-
 export default OcupacionesModal;
