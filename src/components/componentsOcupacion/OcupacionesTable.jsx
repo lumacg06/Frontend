@@ -3,6 +3,7 @@ import OcupacionRow from "./OcupacionesRow"; // Asegúrate de que este component
 
 const OcupacionesTable = ({ ocupaciones, onDelete, onEdit }) => {
   return (
+    <div className="ocupaciones-container">
     <table className="ocupaciones-table">
       <thead className="ocupaciones-table-header">
         <tr className="ocupaciones-table-row">
@@ -30,6 +31,7 @@ const OcupacionesTable = ({ ocupaciones, onDelete, onEdit }) => {
         )}
       </tbody>
     </table>
+    </div>
   );
 };
 

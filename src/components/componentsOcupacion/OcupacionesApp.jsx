@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./OcupacionesApp.css"; 
+import "./OcupacionesModal.css";
 import OcupacionesTable from "./OcupacionesTable"; 
 import OcupacionesModal from "./OcupacionesModal"; 
 import OcupacionesSearch from "./OcupacionesSearch"; 

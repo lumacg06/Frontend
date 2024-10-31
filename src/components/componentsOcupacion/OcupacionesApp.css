@@ -1,139 +1,157 @@
-/* OcupacionesApp.css */
+.ocupaciones-container {
+  width: 100%;
+  margin: 3rem auto;
+  overflow-x: auto;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
+/* Estilos de la tabla */
+.ocupaciones-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  border: 3px solid #000;
+}
+
+.ocupaciones-table-thead {
+  background-color: #000;
+  color: #fff;
+}
+
+.ocupaciones-table-row {
+  border: 2px solid #000;
+  transition: background-color 0.3s ease;
+}
+
+.ocupaciones-table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.ocupaciones-table-header-cell {
+  padding: 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: 2px solid #000;
+  background-color: #000;
+}
+
+.ocupaciones-header-descripcion {
+  width: 40%;
+}
+
+.ocupaciones-header-codigo {
+  width: 30%;
+}
+
+.ocupaciones-header-acciones {
+  width: 30%;
+  text-align: center;
+}
+
+.ocupaciones-table-body tr {
+  border: 2px solid #000;
+}
+
+.ocupaciones-table-body td {
+  padding: 1.3rem;
+  color: #000;
+  font-size: 1.1rem;
+  border: 2px solid #000;
+}
+
+/* Estilos de los inputs */
+.ocupacionesform-input-descripcion:focus,
+.ocupacionesform-input-codigo:focus {
+  border-color: #000;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* Botón de guardar */
+.ocupacionesform-button-save {
+  background-color: #47d444;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ocupacionesform-button-save:hover {
+  background-color: #1a1a99;
+  transform: translateY(-2px);
+}
+
+/* Botón de cancelar */
+.ocupacionesform-button-cancel {
+  background-color: #e74c3c;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ocupacionesform-button-cancel:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Espaciado entre los labels y los títulos */
+label.ocupacionesform-label-descripcion,
+label.ocupacionesform-label-codigo {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding: 1px;
+  margin-top: 20px;
+}
+
+/* Estilos para el input de búsqueda (si se necesita) */
+.ocupaciones-search-input {
+  position: fixed;
+  top: 75px;
+  right: 220px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Efecto de enfoque en el input de búsqueda */
+.ocupaciones-search-input:focus {
+  border-color: #33ff00;
+  outline: none;
+  box-shadow: 0 0 5px #33ff00;
+}
+
+.ocupacion-edit-button {
+  background-color: #27ae60;
+  color: #ffffff;
+  margin-right: 12px;
   
-  .ocupaciones-app-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ocupaciones-app-title {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  .ocupaciones-add-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .ocupaciones-add-button:hover {
-    background-color: #2980b9;
-  }
-  
-  .ocupaciones-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .ocupaciones-table th, .ocupaciones-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .ocupaciones-table th {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  .ocupaciones-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .ocupaciones-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .ocupaciones-modal-container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 500px;
-  }
-  
-  .ocupaciones-modal {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .ocupaciones-modal input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .ocupaciones-modal button {
-    padding: 10px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .ocupaciones-modal button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Estilos para el componente de búsqueda */
-  .ocupaciones-search {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .ocupaciones-search input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .ocupaciones-search button {
-    padding: 10px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .ocupaciones-search button:hover {
-    background-color: #2980b9;
-  }
+}
+.ocupacion-delete-button{
+  background-color: #e74c3c;
+  color: white;
+ 
+}
+.ocupacion-edit-button:hover{
+  background-color: #007430;
+  transform: translateY(-2px);
+}
+.ocupacion-delete-button:hover{
+  background-color: #ff1900;
+  transform: translateY(-2px);
+}

@@ -137,6 +137,7 @@ h1.dni-app-title {
   background-color: #27ae60;
   color: #ffffff;
   margin-right: 12px;
+  transform: translateY(-2px);
 }
 
 .dni-button-delete {

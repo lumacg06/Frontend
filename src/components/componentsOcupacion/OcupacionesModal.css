@@ -1,0 +1,104 @@
+/* Estilos para el overlay del modal */
+.ocupacionmodal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+/* Estilos para el contenido del modal */
+.ocupacionmodal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Ancho del modal */
+    max-width: 90%; /* Ancho máximo para pantallas pequeñas */
+}
+
+/* Título del modal */
+.ocupacionmodal-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Estilos para la tabla dentro del modal */
+.ocupacionmodal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ocupacionmodal-row {
+    border-bottom: 1px solid #ccc; /* Línea divisoria entre filas */
+}
+
+.ocupacionmodal-cell {
+    padding: 1rem;
+}
+
+/* Estilos para las etiquetas y los inputs */
+.ocupacionmodal-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.ocupacionmodal-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.ocupacionmodal-input:focus {
+    border-color: #47d444; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilos para el pie del modal */
+.ocupacionmodal-footer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* Estilos para los botones */
+.ocupacionmodal-button-save {
+    background-color: #47d444;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.ocupacionmodal-button-save:hover {
+    background-color: #1a1a99;
+    transform: translateY(-2px);
+}
+
+.ocupacionmodal-button-cancel {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ocupacionmodal-button-cancel:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
