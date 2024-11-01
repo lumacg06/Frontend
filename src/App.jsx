@@ -6,12 +6,13 @@ import DiscapacidadApp from "./components/componentsDisc/DiscapacidadApp";
 import DniApp from "./components/componentsDNI/DniApp";
 import PaisesApp from "./components/componentsPaises/PaisesApp";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css"; 
+import "./App.css";
 import MunicipiosApp from "./components/componentsMuncipios/MunicipiosApp";
 import OcupacionesApp from "./components/componentsOcupacion/OcupacionesApp";
 
-// Importar la imagen
-import mejorH from './Imagenes/MejorH.jpg';
+// Importar las imágenes
+import mejorH from "./Imagenes/MejorH.jpg";
+import logo from "./Imagenes/logo for an IPS.png"; // Ruta del logo
 
 const App = () => {
   const [show, setShow] = React.useState(false);
@@ -22,10 +23,12 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
+        {/* Fixed top navbar with background image */}
         <Navbar expand={false} fixed="top" className="navbar-custom">
           <Container fluid>
             <Navbar.Brand as={Link} to="/" className="logo">
-              <img src="/logo.png" alt="Logo" className="logo-img" />
+              <img src={logo} alt="Logo" className="logo-img" />{" "}
+              {/* Usar la imagen del logo */}
               IPS Salud y Vida
             </Navbar.Brand>
             <Navbar.Toggle
@@ -35,7 +38,7 @@ const App = () => {
             />
             <Offcanvas
               id="offcanvas-navbar"
-              placement=" start"
+              placement="start"
               show={show}
               onHide={handleClose}
             >
@@ -113,6 +116,7 @@ const App = () => {
           </Container>
         </Navbar>
 
+        {/* Main content area */}
         <main className="main-section">
           <Container fluid className="container-custom">
             <Routes>
@@ -129,13 +133,13 @@ const App = () => {
                     className="hero-section"
                     style={{
                       backgroundImage: `url(${mejorH})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      height: '100vh',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      color: 'white'
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      height: "100vh",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      color: "white",
                     }}
                   >
                     <div className="hero-content">

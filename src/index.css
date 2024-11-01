@@ -24,6 +24,6 @@ body, html {
     box-sizing: border-box;
     width: 100%; /* Asegura que el ancho sea 100% */
     max-width: 1200px; /* Controla el ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin: 80px auto 50px; /* Aumentado el margen superior a 100px y el inferior a 50px */
     background-color: rgba(226, 235, 226, 0.61); /* Color de fondo con opacidad para ver la imagen */
 }
