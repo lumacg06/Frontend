@@ -1,148 +1,148 @@
 /* Contenedor principal */
 .etnias-container {
-    width: 100%;
-    margin: 3rem auto;
-    overflow-x: auto;
-    background: white;
-    padding: 2rem;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-  }
-  
-  /* Estilos de la tabla */
-  .etnias-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 800px;
-    border: 3px solid #000000;
-  }
-  
-  .etnias-table-header {
-    background-color: #000000;
-    color: white;
-  }
-  
-  .etnias-table-row {
-    border: 2px solid #000000;
-    transition: background-color 0.3s ease;
-  }
-  
-  .etnias-table-row:hover {
-    background-color: #f8f9fa;
-  }
-  
-  .etnias-header-name,
-  .etnias-header-actions {
-    padding: 1.5rem;
-    text-align: left;
-    font-weight: 600;
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    border: 2px solid #000000;
-    background-color: #000000;
-  }
-  
-  .etnias-header-name {
-    width: 70%;
-  }
-  
-  .etnias-header-actions {
-    width: 30%;
-    text-align: center;
-  }
-  
-  .etnias-table-body tr {
-    border: 2px solid #000000;
-  }
-  
-  .etnias-table-body td {
-    padding: 1.3rem;
-    color: #000000;
-    font-size: 1.1rem;
-    border: 2px solid #000000;
-  }
-  
-  /* Botones de acción */
-  .etnia-action-button {
-    margin: 6px;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .etnia-edit-button {
-    background-color: #27ae60;
-    color: #000000;
-    margin-right: 12px;
-  }
-  
-  .etnia-edit-button:hover {
-    background-color: #f39c12;
-    transform: translateY(-2px);
-  }
-  
-  .etnia-delete-button {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  .etnia-delete-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
-  }
-  
-  /* Campos de entrada */
-  .etnia-input-field {
-    width: 100%;
-    max-width: 400px;
-    padding: 15px 20px;
-    margin: 15px 0;
-    border: 2px solid #000000;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    color: #000000;
-  }
-  
-  .etnia-input-field:focus {
-    border-color: #000000;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-    outline: none;
-  }
-  
-  /* Botón de envío */
-  .etnia-submit-button {
-    background-color: #000000;
-    color: white;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .etnia-submit-button:hover {
-    background-color: #333333;
-    transform: translateY(-2px);
-  }
-  
- /* Modal de edición */
- .edit-modal-content {
+  width: 100%;
+  margin: 3rem auto;
+  overflow-x: auto;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+.etnias-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  border: 3px solid #000000;
+}
+
+.etnias-table-header {
+  background-color: #000000;
+  color: white;
+}
+
+.etnias-table-row {
+  border: 2px solid #000000;
+  transition: background-color 0.3s ease;
+}
+
+.etnias-table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.etnias-header-name,
+.etnias-header-actions {
+  padding: 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: 2px solid #000000;
+  background-color: #000000;
+}
+
+.etnias-header-name {
+  width: 70%;
+}
+
+.etnias-header-actions {
+  width: 30%;
+  text-align: center;
+}
+
+.etnias-table-body tr {
+  border: 2px solid #000000;
+}
+
+.etnias-table-body td {
+  padding: 1.3rem;
+  color: #000000;
+  font-size: 1.1rem;
+  border: 2px solid #000000;
+}
+
+/* Botones de acción */
+.etnia-action-button {
+  margin: 6px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.etnia-edit-button {
+  background-color: #27ae60;
+  color: #000000;
+  margin-right: 12px;
+}
+
+.etnia-edit-button:hover {
+  background-color: #f39c12;
+  transform: translateY(-2px);
+}
+
+.etnia-delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.etnia-delete-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Campos de entrada */
+.etnia-input-field {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px 20px;
+  margin: 15px 0;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  color: #000000;
+}
+
+.etnia-input-field:focus {
+  border-color: #000000;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* Botón de envío */
+.etnia-submit-button {
+  background-color: #000000;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.etnia-submit-button:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+/* Modal de edición */
+.edit-modal-content {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 2rem; /* Reduce el padding para hacer el modal más pequeño */
+  padding: 2rem;
+  /* Reduce el padding para hacer el modal más pequeño */
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  width: 400px; /* Reduce el ancho del modal */
+  width: 400px;
+  /* Reduce el ancho del modal */
   max-width: 95vw;
   border: 2px solid #000000;
 }
@@ -150,19 +150,24 @@
 .edit-modal-content h2 {
   color: #000000;
   text-align: center;
-  margin-bottom: 1.5rem; /* Reduce el margen inferior */
-  font-size: 1.3rem; /* Cambia el tamaño de la fuente del título a 13px */
+  margin-bottom: 1.5rem;
+  /* Reduce el margen inferior */
+  font-size: 1.3rem;
+  /* Cambia el tamaño de la fuente del título a 13px */
 }
 
 .edit-modal-save-button,
 .edit-modal-cancel-button {
-  padding: 10px 20px; /* Reduce el padding de los botones */
+  padding: 10px 20px;
+  /* Reduce el padding de los botones */
   border: none;
   border-radius: 6px;
-  font-size: 0.9rem; /* Cambia el tamaño de la fuente de los botones a 13px */
+  font-size: 0.9rem;
+  /* Cambia el tamaño de la fuente de los botones a 13px */
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 0 5px; /* Reduce el margen entre los botones */
+  margin: 0 5px;
+  /* Reduce el margen entre los botones */
 }
 
 .edit-modal-save-button {
@@ -184,42 +189,50 @@
   background-color: #c0392b;
   transform: translateY(-2px);
 }
-  label.etnia-form-label{
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
 
-  /* Nueva etnia */
+label.etnia-form-label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-  .etnia-input-field {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px 15px;
-    margin: 2px; /* Cambia el margen inferior a 2px para acercar el botón */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    
-  }
-  
-  label.edit-modal-label {
-    font-size: 13px;
-    margin-bottom: 5px; /* Aumentar el espacio inferior */
-    display: block; /* Asegurar que ocupe su propia línea */
-  }
-  .etnia-form-container {
-    display: flex;
-    align-items: center;
-    padding: 1px;
-    margin-bottom: 2px;
-  }
-  .etnia-submit-button {
-    background-color: #47d444;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5%;
-    margin: 0; /* Elimina el margen para acercar más el botón */
-    margin-top: 15px; /* Ajusta el margen superior a 2px para que esté más cerca del input */
-  }
+
+/* Nueva etnia */
+
+.etnia-input-field {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 15px;
+  margin: 2px;
+  /* Cambia el margen inferior a 2px para acercar el botón */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+
+}
+
+label.edit-modal-label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  /* Aumentar el espacio inferior */
+  display: block;
+  /* Asegurar que ocupe su propia línea */
+}
+
+.etnia-form-container {
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  margin-bottom: 2px;
+}
+
+.etnia-submit-button {
+  background-color: #47d444;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5%;
+  margin: 0;
+  /* Elimina el margen para acercar más el botón */
+  margin-top: 15px;
+  /* Ajusta el margen superior a 2px para que esté más cerca del input */
+}

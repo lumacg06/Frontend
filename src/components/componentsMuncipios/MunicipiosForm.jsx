@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 
-const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) => {
+const MunicipiosForm = ({
+  municipio,
+  onSave = () => {},
+  onCancel = () => {},
+}) => {
   // Evitar renderizar el formulario vacío
   if (!municipio) return null;
 
-  const [nombre, setNombre] = useState(municipio.nombre || ""); 
-  const [codigoMunicipio, setCodigoMunicipio] = useState(municipio.codigomunicipio || ""); 
+  const [nombre, setNombre] = useState(municipio.nombre || "");
+  const [codigoMunicipio, setCodigoMunicipio] = useState(
+    municipio.codigomunicipio || ""
+  );
 
   useEffect(() => {
     if (municipio) {
-      setNombre(municipio.nombre || ""); 
-      setCodigoMunicipio(municipio.codigomunicipio || ""); 
+      setNombre(municipio.nombre || "");
+      setCodigoMunicipio(municipio.codigomunicipio || "");
     }
   }, [municipio]);
 
@@ -19,11 +25,11 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
 
     const newMunicipio = {
       nombre,
-      codigomunicipio: codigoMunicipio, 
+      codigomunicipio: codigoMunicipio,
     };
 
     if (municipio && municipio.id) {
-      newMunicipio.id = municipio.id; 
+      newMunicipio.id = municipio.id;
     }
 
     const method = municipio && municipio.id ? "PUT" : "POST";
@@ -50,22 +56,22 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
       }
 
       const data = await response.json();
-      console.log('Municipio guardado:', data); // Verificar el municipio guardado
-      onSave(data); 
-      resetForm(); 
+      console.log("Municipio guardado:", data); // Verificar el municipio guardado
+      onSave(data);
+      resetForm();
     } catch (error) {
       console.error("Error al guardar:", error.message);
     }
   };
 
   const resetForm = () => {
-    setNombre(""); 
-    setCodigoMunicipio(""); 
+    setNombre("");
+    setCodigoMunicipio("");
   };
 
   const handleCancel = () => {
     resetForm();
-    onCancel(); 
+    onCancel();
   };
 
   return (
@@ -80,15 +86,18 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
           id="nombre"
           className="municipiosform-input-nombre"
           type="text"
-          value={nombre} 
-          onChange={(e) => setNombre(e.target.value)} 
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
           required
           placeholder="Ingrese el nombre del municipio"
         />
       </div>
 
       <div className="form-group">
-        <label className="municipiosform-label-codigo" htmlFor="codigoMunicipio">
+        <label
+          className="municipiosform-label-codigo"
+          htmlFor="codigoMunicipio"
+        >
           Código Municipio:
         </label>
         <input
@@ -106,7 +115,7 @@ const MunicipiosForm = ({ municipio, onSave = () => {}, onCancel = () => {} }) =
         <button
           className="municipiosform-button-save"
           type="submit"
-          disabled={! nombre.trim() || !codigoMunicipio.trim()} 
+          disabled={!nombre.trim() || !codigoMunicipio.trim()}
         >
           {municipio && municipio.id ? "Actualizar" : "Guardar"}
         </button>

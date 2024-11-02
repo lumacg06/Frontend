@@ -79,7 +79,9 @@ const MunicipiosApp = () => {
         );
         setMunicipios((prevMunicipios) =>
           prevMunicipios.map((municipio) =>
-            municipio.codigomunicipio === editing.codigomunicipio ? response.data : municipio
+            municipio.codigomunicipio === editing.codigomunicipio
+              ? response.data
+              : municipio
           )
         );
         Swal.fire({

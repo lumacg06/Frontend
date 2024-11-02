@@ -35,7 +35,9 @@ const MunicipiosModal = ({ municipio, onSave, onCancel }) => {
                       className="municipiomodal-input"
                       type="text"
                       value={codigoMunicipio}
-                      onChange={(event) => setCodigoMunicipio(event.target.value)}
+                      onChange={(event) =>
+                        setCodigoMunicipio(event.target.value)
+                      }
                     />
                   </label>
                 </td>

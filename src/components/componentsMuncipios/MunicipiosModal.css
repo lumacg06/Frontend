@@ -5,8 +5,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro semi-transparente */
+    z-index: 999;
+    /* Asegura que esté por encima de otros elementos */
 }
 
 .municipiomodal-content {
@@ -15,88 +17,127 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 2rem; /* Padding para el modal */
+    padding: 2rem;
+    /* Padding para el modal */
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    width: 400px; /* Ancho del modal */
-    max-width: 95vw; /* Ancho máximo en pantallas pequeñas */
-    border: 2px solid #000; /* Borde del modal */
+    width: 400px;
+    /* Ancho del modal */
+    max-width: 95vw;
+    /* Ancho máximo en pantallas pequeñas */
+    border: 2px solid #000;
+    /* Borde del modal */
 }
 
 .municipiomodal-title {
-    color: #000; /* Color del texto del título */
-    text-align: center; /* Centrar el texto */
-    margin-bottom: 1.5rem; /* Margen inferior */
-    font-size: 1.3rem; /* Tamaño de la fuente del título */
+    color: #000;
+    /* Color del texto del título */
+    text-align: center;
+    /* Centrar el texto */
+    margin-bottom: 1.5rem;
+    /* Margen inferior */
+    font-size: 1.3rem;
+    /* Tamaño de la fuente del título */
 }
 
 .municipiomodal-form {
-    width: 100%; /* Ancho completo del formulario */
+    width: 100%;
+    /* Ancho completo del formulario */
 }
 
 .municipiomodal-table {
-    width: 100%; /* Ancho completo de la tabla */
-    border-collapse: collapse; /* Colapsar bordes */
+    width: 100%;
+    /* Ancho completo de la tabla */
+    border-collapse: collapse;
+    /* Colapsar bordes */
 }
 
 .municipiomodal-row {
-    border: 2px solid #000; /* Borde de las filas */
+    border: 2px solid #000;
+    /* Borde de las filas */
 }
 
 .municipiomodal-cell {
-    padding: 1rem; /* Espaciado interno de las celdas */
+    padding: 1rem;
+    /* Espaciado interno de las celdas */
 }
 
 .municipiomodal-label {
-    font-size: 0.9rem; /* Tamaño de la fuente de las etiquetas */
-    color: #000; /* Color del texto de las etiquetas */
-    margin-bottom: 0.5rem; /* Margen inferior */
-    display: block; /* Asegura que ocupe su propia línea */
+    font-size: 0.9rem;
+    /* Tamaño de la fuente de las etiquetas */
+    color: #000;
+    /* Color del texto de las etiquetas */
+    margin-bottom: 0.5rem;
+    /* Margen inferior */
+    display: block;
+    /* Asegura que ocupe su propia línea */
 }
 
 .municipiomodal-input {
-    width: 100%; /* Ancho completo */
-    padding: 10px; /* Padding interno */
-    margin-bottom: 1rem; /* Margen inferior */
-    border: 1px solid #ccc; /* Borde del campo de entrada */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 0.9rem; /* Tamaño de la fuente */
+    width: 100%;
+    /* Ancho completo */
+    padding: 10px;
+    /* Padding interno */
+    margin-bottom: 1rem;
+    /* Margen inferior */
+    border: 1px solid #ccc;
+    /* Borde del campo de entrada */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    font-size: 0.9rem;
+    /* Tamaño de la fuente */
 }
 
 /* Estilos para el pie de página del modal */
 .municipiomodal-footer {
-    text-align: center; /* Centrar el contenido del pie de página */
+    text-align: center;
+    /* Centrar el contenido del pie de página */
 }
 
 .municipiomodal-button-save,
 .municipiomodal-button-cancel {
-    padding: 10px 20px; /* Padding de los botones */
-    border: none; /* Sin borde */
-    border-radius: 6px; /* Bordes redondeados */
-    font-size: 0.9rem; /* Tamaño de la fuente de los botones */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: all 0.3s ease; /* Transición suave */
-    margin: 0 5px; /* Margen entre los botones */
+    padding: 10px 20px;
+    /* Padding de los botones */
+    border: none;
+    /* Sin borde */
+    border-radius: 6px;
+    /* Bordes redondeados */
+    font-size: 0.9rem;
+    /* Tamaño de la fuente de los botones */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    transition: all 0.3s ease;
+    /* Transición suave */
+    margin: 0 5px;
+    /* Margen entre los botones */
 }
 
 .municipiomodal-button-save {
-    background-color: #2ecc71; /* Color de fondo del botón de guardar */
-    color: white; /* Color del texto del botón de guardar */
-    
+    background-color: #2ecc71;
+    /* Color de fondo del botón de guardar */
+    color: white;
+    /* Color del texto del botón de guardar */
+
 }
 
 .municipiomodal-button-save:hover {
-    background-color: #27ae60; /* Color de fondo al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de elevación */
+    background-color: #27ae60;
+    /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px);
+    /* Efecto de elevación */
 }
 
 .municipiomodal-button-cancel {
-    background-color: #e74c3c; /* Color de fondo del botón de cancelar */
-    color: white; /* Color del texto del botón de cancelar */
+    background-color: #e74c3c;
+    /* Color de fondo del botón de cancelar */
+    color: white;
+    /* Color del texto del botón de cancelar */
 }
 
 .municipiomodal-button-cancel:hover {
-    background-color: #c0392b; /* Color de fondo al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de elevación */
+    background-color: #c0392b;
+    /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px);
+    /* Efecto de elevación */
 }

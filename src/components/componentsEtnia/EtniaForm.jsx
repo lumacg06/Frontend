@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const EtniaForm = ({ etnia, onSave = () => {} }) => {
   if (!etnia) return null; // Evitar renderizar el formulario vacío
@@ -13,10 +13,10 @@ const EtniaForm = ({ etnia, onSave = () => {} }) => {
     }
 
     // Hacer una solicitud HTTP a la base de datos
-    fetch('/api/etnias', {
-      method: 'POST',
+    fetch("/api/etnias", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newEtnia),
     })
@@ -25,7 +25,7 @@ const EtniaForm = ({ etnia, onSave = () => {} }) => {
       .catch((error) => console.error(error));
 
     onSave(newEtnia); // Llamar a onSave para guardar la etnia
-    setEtniaValue(''); // Limpiar el campo de la etnia
+    setEtniaValue(""); // Limpiar el campo de la etnia
   };
 
   return (

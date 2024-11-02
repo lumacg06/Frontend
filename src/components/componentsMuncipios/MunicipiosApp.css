@@ -194,10 +194,12 @@ label.municipios-label {
   color: white;
   margin-right: 12px;
 }
+
 .municipio-button-edit:hover {
   background-color: #27ae60;
   transform: translateY(-2px);
 }
+
 .municipio-button-delete {
   background-color: #e74c3c;
   color: #ffffff;

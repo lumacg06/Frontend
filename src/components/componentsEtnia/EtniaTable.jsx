@@ -1,5 +1,5 @@
-import React from 'react';
-import EtniaRow from './EtniaRow';
+import React from "react";
+import EtniaRow from "./EtniaRow";
 
 const EtniasTable = ({ etnias, onEdit, onDelete }) => {
   return (
