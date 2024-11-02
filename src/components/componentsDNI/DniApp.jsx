@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DniApp.css";
-import "./DniModal.css"
+import "./DniModal.css";
 import DniTable from "./DniTable";
 import DniForm from "./DniForm";
 import Swal from "sweetalert2";
@@ -26,7 +26,7 @@ const DniApp = () => {
       Swal.fire({
         title: "Error",
         text: "No se pudieron cargar los tipos de documento",
-        icon: "error"
+        icon: "error",
       });
     }
   };
@@ -61,7 +61,7 @@ const DniApp = () => {
             Swal.fire({
               title: "Error",
               text: "No se pudo eliminar el tipo de documento",
-              icon: "error"
+              icon: "error",
             });
           });
       }
@@ -76,7 +76,9 @@ const DniApp = () => {
           `http://localhost:8080/api/tipos-documento/${editing.id}`,
           newDni
         );
-        setDnis(dnis.map((dni) => (dni.id === editing.id ? response.data : dni)));
+        setDnis(
+          dnis.map((dni) => (dni.id === editing.id ? response.data : dni))
+        );
         Swal.fire({
           title: "¡Actualizado!",
           text: "El tipo de documento ha sido actualizado correctamente.",
@@ -101,7 +103,7 @@ const DniApp = () => {
       Swal.fire({
         title: "Error",
         text: "No se pudo guardar el tipo de documento",
-        icon: "error"
+        icon: "error",
       });
     }
   };

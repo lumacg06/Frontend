@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const DniRow = ({ dni, onDelete, onEdit }) => {
   return (
@@ -6,8 +6,12 @@ const DniRow = ({ dni, onDelete, onEdit }) => {
       <td className="dni-cell">{dni.nombre}</td>
       <td className="dni-cell">{dni.codigo}</td>
       <td className="dni-actions">
-        <button className="dni-button-edit" onClick={() => onEdit(dni)}>Editar</button>
-        <button className="dni-button-delete" onClick={() => onDelete(dni.id)}>Eliminar</button>
+        <button className="dni-button-edit" onClick={() => onEdit(dni)}>
+          Editar
+        </button>
+        <button className="dni-button-delete" onClick={() => onDelete(dni.id)}>
+          Eliminar
+        </button>
       </td>
     </tr>
   );

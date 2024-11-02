@@ -47,10 +47,7 @@ const DniModal = ({ dni, onClose, onSave }) => {
               </tr>
               <tr>
                 <td className="dnimodal-footer">
-                  <button
-                    className="dnimodal-button-save"
-                    type="submit"
-                  >
+                  <button className="dnimodal-button-save" type="submit">
                     Guardar
                   </button>
                   <button

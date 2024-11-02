@@ -1,111 +1,166 @@
-
 /* Estilos para el contenedor del formulario */
 .dniform-container {
-  padding: 20px; /* Espaciado interno */
-  background-color: #f9f9f9; /* Fondo gris claro */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  max-width: 400px; /* Ancho máximo del formulario */
-  margin: auto; /* Centrar horizontalmente */
-  position: absolute; /* Posicionamiento absoluto */
-  top: 50%; /* 50% desde la parte superior */
-  left: 50%; /* 50% desde la izquierda */
-  transform: translate(-50%, -50%); /* Mover hacia arriba y hacia la izquierda para centrar */
+  padding: 20px;
+  /* Espaciado interno */
+  background-color: #f9f9f9;
+  /* Fondo gris claro */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  max-width: 400px;
+  /* Ancho máximo del formulario */
+  margin: auto;
+  /* Centrar horizontalmente */
+  position: absolute;
+  /* Posicionamiento absoluto */
+  top: 50%;
+  /* 50% desde la parte superior */
+  left: 50%;
+  /* 50% desde la izquierda */
+  transform: translate(-50%, -50%);
+  /* Mover hacia arriba y hacia la izquierda para centrar */
 }
 
 /* Estilos para el título del formulario */
 .dniform-container h2 {
-  text-align: center; /* Centrar el texto */
-  margin-bottom: 20px; /* Margen inferior */
+  text-align: center;
+  /* Centrar el texto */
+  margin-bottom: 20px;
+  /* Margen inferior */
 }
 
 /* Estilos para los grupos de formulario */
 .form-group {
-  margin-bottom: 15px; /* Espaciado entre grupos */
+  margin-bottom: 15px;
+  /* Espaciado entre grupos */
 }
 
 /* Estilos para las etiquetas */
 .dniform-label-documento,
 .dniform-label-codigo {
-  display: block; /* Hacer que la etiqueta ocupe toda la línea */
-  margin-bottom: 5px; /* Margen inferior */
-  font-weight: bold; /* Negrita para las etiquetas */
+  display: block;
+  /* Hacer que la etiqueta ocupe toda la línea */
+  margin-bottom: 5px;
+  /* Margen inferior */
+  font-weight: bold;
+  /* Negrita para las etiquetas */
 }
 
 /* Estilos para los inputs */
 .dniform-input-documento,
 .dniform-input-codigo {
-  width: 100%; /* Ancho completo */
-  padding: 10px; /* Espaciado interno */
-  border: 1px solid #ccc; /* Borde gris claro */
-  border-radius: 4px; /* Bordes redondeados */
-  box-sizing: border-box; /* Incluir padding y border en el ancho total */
-  transition: border-color 0.3s; /* Transición suave para el borde */
+  width: 100%;
+  /* Ancho completo */
+  padding: 10px;
+  /* Espaciado interno */
+  border: 1px solid #ccc;
+  /* Borde gris claro */
+  border-radius: 4px;
+  /* Bordes redondeados */
+  box-sizing: border-box;
+  /* Incluir padding y border en el ancho total */
+  transition: border-color 0.3s;
+  /* Transición suave para el borde */
 }
 
 /* Efecto focus para los inputs */
 .dniform-input-documento:focus,
 .dniform-input-codigo:focus {
-  border-color: #66afe9; /* Color de borde al enfocar */
-  outline: none; /* Quitar el contorno predeterminado */
+  border-color: #66afe9;
+  /* Color de borde al enfocar */
+  outline: none;
+  /* Quitar el contorno predeterminado */
 }
 
 /* Estilos para los botones */
 .dniform-button {
-  background-color: #007bff; /* Color de fondo del botón */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 4px; /* Bordes redondeados */
-  padding: 10px 15px; /* Espaciado interno */
-  cursor: pointer; /* Cambiar cursor al pasar por encima */
-  width: 100%; /* Ancho completo */
-  transition: background-color 0.3s; /* Transición suave para el fondo */
+  background-color: #007bff;
+  /* Color de fondo del botón */
+  color: white;
+  /* Color del texto */
+  border: none;
+  /* Sin borde */
+  border-radius: 4px;
+  /* Bordes redondeados */
+  padding: 10px 15px;
+  /* Espaciado interno */
+  cursor: pointer;
+  /* Cambiar cursor al pasar por encima */
+  width: 100%;
+  /* Ancho completo */
+  transition: background-color 0.3s;
+  /* Transición suave para el fondo */
 }
 
 /* Efecto hover para los botones */
 .dniform-button:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el cursor */
+  background-color: #0056b3;
+  /* Color de fondo al pasar el cursor */
 }
 
 /* Estilos para mensajes de error */
 .dniform-error {
-  color: red; /* Color rojo para errores */
-  font-size: 14px; /* Tamaño de fuente */
-  margin-top: 5px; /* Margen superior */
+  color: red;
+  /* Color rojo para errores */
+  font-size: 14px;
+  /* Tamaño de fuente */
+  margin-top: 5px;
+  /* Margen superior */
 
 }
 
 /* Estilos para el pie del formulario */
 .dniform-footer {
-  text-align: center; /* Centrar el texto */
-  margin-top: 20px; /* Margen superior */
-  font-size: 12px; /* Tamaño de fuente más pequeño */
-  color: #666; /* Color gris para el texto */
+  text-align: center;
+  /* Centrar el texto */
+  margin-top: 20px;
+  /* Margen superior */
+  font-size: 12px;
+  /* Tamaño de fuente más pequeño */
+  color: #666;
+  /* Color gris para el texto */
 }
+
 /* Efecto focus para los inputs */
 
 .dniform-input-documento:focus,
 .dniform-input-codigo:focus {
-  border-color: #66afe9; /* Color de borde al enfocar */
-  outline: none; /* Quitar el contorno predeterminado */
+  border-color: #66afe9;
+  /* Color de borde al enfocar */
+  outline: none;
+  /* Quitar el contorno predeterminado */
 }
 
 /* Estilos para los botones */
 .dniform-button-save {
-  background-color: #2ecc71; /* Color de fondo del botón de guardar */
-    color: white; /* Color del texto del botón de guardar */
+  background-color: #2ecc71;
+  /* Color de fondo del botón de guardar */
+  color: white;
+  /* Color del texto del botón de guardar */
 }
-.dniform-button-cancelar{
-  background-color: #e74c3c; /* Color de fondo del botón de cancelar */
-  color: white; /* Color del texto del botón de cancelar */
+
+.dniform-button-cancelar {
+  background-color: #e74c3c;
+  /* Color de fondo del botón de cancelar */
+  color: white;
+  /* Color del texto del botón de cancelar */
 }
+
 .dniform-button-cancelar,
-.dniform-button-save{
-  padding: 10px 20px; /* Padding de los botones */
-  border: none; /* Sin borde */
-  border-radius: 6px; /* Bordes redondeados */
-  font-size: 0.9rem; /* Tamaño de la fuente de los botones */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: all 0.3s ease; /* Transición suave */
-  margin: 0 5px; /* Margen entre los botones */
+.dniform-button-save {
+  padding: 10px 20px;
+  /* Padding de los botones */
+  border: none;
+  /* Sin borde */
+  border-radius: 6px;
+  /* Bordes redondeados */
+  font-size: 0.9rem;
+  /* Tamaño de la fuente de los botones */
+  cursor: pointer;
+  /* Cambia el cursor al pasar sobre el botón */
+  transition: all 0.3s ease;
+  /* Transición suave */
+  margin: 0 5px;
+  /* Margen entre los botones */
 }

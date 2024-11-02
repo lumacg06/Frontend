@@ -1,28 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const DiscapacidadForm = ({ discapacidad, onSave }) => {
-  // Inicializar con string vacío si discapacidad?.categoria es undefined
-  const [discapacidadValue, setDiscapacidadValue] = useState('');
-
+  const [discapacidadValue, setDiscapacidadValue] = useState("");
   useEffect(() => {
-    // Actualizar el valor cuando cambia la prop discapacidad
     if (discapacidad) {
-      setDiscapacidadValue(discapacidad.categoria || '');
+      setDiscapacidadValue(discapacidad.categoria || "");
     }
   }, [discapacidad]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     const newDiscapacidad = {
       categoria: discapacidadValue,
-      ...(discapacidad?.id && { id: discapacidad.id })
+      ...(discapacidad?.id && { id: discapacidad.id }),
     };
 
     try {
       let response;
-      
+
       if (discapacidad?.id) {
         response = await axios.put(
           `http://localhost:8080/api/discapacidades/${discapacidad.id}`,
@@ -30,23 +27,22 @@ const DiscapacidadForm = ({ discapacidad, onSave }) => {
         );
       } else {
         response = await axios.post(
-          'http://localhost:8080/api/discapacidades',
+          "http://localhost:8080/api/discapacidades",
           newDiscapacidad
         );
       }
 
       onSave(response.data);
-      setDiscapacidadValue('');
-      
+      setDiscapacidadValue("");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
   return (
     <form className="discapacidad-form-container" onSubmit={handleSubmit}>
       <label className="discapacidad-form-label">
-        {discapacidad?.id ? 'Editar' : 'Nueva'} categoría:
+        {discapacidad?.id ? "Editar" : "Nueva"} categoría:
         <input
           className="discapacidad-form-input"
           type="text"
@@ -56,12 +52,12 @@ const DiscapacidadForm = ({ discapacidad, onSave }) => {
           required
         />
       </label>
-      <button 
-        className="discapacidad-submit-button" 
+      <button
+        className="discapacidad-submit-button"
         type="submit"
         disabled={!discapacidadValue.trim()}
       >
-        {discapacidad?.id ? 'Actualizar' : 'Guardar'}
+        {discapacidad?.id ? "Actualizar" : "Guardar"}
       </button>
     </form>
   );

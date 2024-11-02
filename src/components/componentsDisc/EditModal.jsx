@@ -2,25 +2,22 @@ import React from "react";
 
 const DiscapacidadModal = ({ discapacidad, onClose, onSave }) => {
   const [discapacidadValue, setDiscapacidadValue] = React.useState(
-    discapacidad?.categoria || '' // Cambiado de discapacidad.discapacidad a discapacidad?.categoria
+    discapacidad?.categoria || "" // Cambiado de discapacidad.discapacidad a discapacidad?.categoria
   );
-
   // Actualizar el valor cuando cambia la prop discapacidad
   React.useEffect(() => {
     if (discapacidad) {
-      setDiscapacidadValue(discapacidad.categoria || '');
+      setDiscapacidadValue(discapacidad.categoria || "");
     }
   }, [discapacidad]);
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newDiscapacidad = { 
-      categoria: discapacidadValue,  // Cambiado de discapacidad a categoria
-      ...(discapacidad?.id && { id: discapacidad.id })
+    const newDiscapacidad = {
+      categoria: discapacidadValue, // Cambiado de discapacidad a categoria
+      ...(discapacidad?.id && { id: discapacidad.id }),
     };
     onSave(newDiscapacidad);
   };
-
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -37,8 +34,8 @@ const DiscapacidadModal = ({ discapacidad, onClose, onSave }) => {
               maxLength={255}
             />
           </label>
-          <button 
-            className="edit-modal-guardar-button" 
+          <button
+            className="edit-modal-guardar-button"
             type="submit"
             disabled={!discapacidadValue.trim()}
           >
